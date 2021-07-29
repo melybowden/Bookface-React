@@ -38,10 +38,10 @@ export default class Search extends Component {
           <div>
             <form onSubmit={this.handleSubmit}>
               <label>
-                Search by book title: 
+                Search by book title:  
                 <input type="text" name="keyword" value={this.state.keyword} onChange={this.handleChange} />
               </label>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Search" />
             </form>
             <div className="book-search">
             {this.state.searchRes.map(book => 

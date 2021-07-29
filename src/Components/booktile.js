@@ -38,15 +38,15 @@ export default function Booktile(props) {
             </div>
             <form onSubmit={handleSubmit}>
               <label>
-                Pick your favorite flavor:
+                Add to shelf:
                 <select value={shelf} onChange={e => setShelf(e.target.value)}>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option value="coconut">Coconut</option>
-                  <option value="mango">Mango</option>
+                  <option value="Grapefruit">Grapefruit</option>
+                  <option value="Lime">Lime</option>
+                  <option value="Coconut">Coconut</option>
+                  <option value="Mango">Mango</option>
                 </select>
               </label>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Add to Shelf" />
             </form>
         </div>
     )
