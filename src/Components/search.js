@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Booktile from './booktile';
+import book_not_found from './book_not_found.jpg';
 
 export default class Search extends Component {
     constructor(props) {
@@ -49,7 +50,7 @@ export default class Search extends Component {
               author={book.volumeInfo.authors} 
               year={book.volumeInfo.publishedDate.substring(0,4)} 
               isbn={book.volumeInfo.industryIdentifiers[1].identifier}
-              imgURL={book.volumeInfo.imageLinks.smallThumbnail}/>)}
+              imgURL={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : book_not_found}/>)}
             </div>
           </div>
         );
