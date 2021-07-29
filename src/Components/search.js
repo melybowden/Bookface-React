@@ -13,6 +13,7 @@ export default class Search extends Component {
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.getIdentifier = this.getIdentifier.bind(this);
       }
     
       handleChange(event) {
@@ -32,6 +33,15 @@ export default class Search extends Component {
           // ISBN: industryIdentifiers[1].identifier ([0] is ISBN 10 not ISBN 13)
         );
       }
+
+      getIdentifier(ids) {
+        for (var i=0; i < ids.length; i++) {
+          if (ids[i].type === "ISBN_13") {
+            return ids[i].identifier;
+          }
+        }
+        return ids[0].identifier.replace(/\D/g,''); 
+      }
     
       render() {
         return (
@@ -44,12 +54,13 @@ export default class Search extends Component {
               <input type="submit" value="Search" />
             </form>
             <div className="book-search">
+            {/* book.volumeInfo.industryIdentifiers[1].identifier */}
             {this.state.searchRes.map(book => 
-            <Booktile key={book.volumeInfo.industryIdentifiers[1].identifier} 
+              <Booktile key={this.getIdentifier(book.volumeInfo.industryIdentifiers)} 
               title={book.volumeInfo.title} 
               author={book.volumeInfo.authors} 
               year={book.volumeInfo.publishedDate.substring(0,4)} 
-              isbn={book.volumeInfo.industryIdentifiers[1].identifier}
+              isbn={this.getIdentifier(book.volumeInfo.industryIdentifiers)}
               imgURL={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : book_not_found}/>)}
             </div>
           </div>
