@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react'
-import book_not_found from './book_not_found.jpg';
+// import book_not_found from './book_not_found.jpg';
 
 export default function Booktile(props) {
     const [shelf, setShelf] = useState('');
@@ -8,12 +8,32 @@ export default function Booktile(props) {
     const handleSubmit = (event) => {
       event.preventDefault();
       alert("Added " + props.title + " to " + shelf)
-      axios.post("http://mysterious-plains-09256.herokuapp.com/bookface", 
-        {title: props.title,
-        author: props.author,
-        imageURL: props.imgURL,
-        year: props.year,
-        isbn: props.isbn})
+      // axios.defaults.headers.post['Content-Type'] = 'application/json';
+      axios.post("https://mysterious-plains-09256.herokuapp.com/bookface", 
+      // {"title": "harry potter",
+      // "author": "jk rowling",
+      // "imageURL": "google.com",
+      // "year": 1998,
+      // "isbn": 123}
+      {"title": props.title,
+      "author": props.author[0],
+      "imageURL": props.imgURL,
+      "year": props.year,
+      "isbn": props.isbn}
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log("error: "+error);
+      });
+
+      // const data = {    title: 'abc',  author: 'abc',  imageURL: 'google.com',  year: 123,  isbn: 123}
+      // fetch('https://bookface-df88d.web.app', {  method: 'POST',  headers: {    'Content-Type': 'application/json', 'Mode':'cors' },  body: JSON.stringify(data),})
+      // .then(response => response.json())
+      // .then(data => {  console.log('Success:', data);})
+      // .catch((error) => {  console.error('Error:', error);});
+
   }
 
     return (

@@ -24,8 +24,9 @@ export default class Search extends Component {
         // axios.get("https://www.googleapis.com/books/v1/volumes?q="+this.state.keyword).then(res => console.log(res.data.items[0].volumeInfo.imageLinks.smallThumbnail))
         axios.get("https://www.googleapis.com/books/v1/volumes?q="+this.state.keyword)
         .then(res => 
-          this.setState({searchRes: res.data.items})  
-          // console.log(res.data.items)
+          // console.log(res.data.items),
+          this.setState({searchRes: res.data.items})
+          
           // year: publishedDate YYYY-MM-DD
           // ISBN: industryIdentifiers[1].identifier ([0] is ISBN 10 not ISBN 13)
         );
