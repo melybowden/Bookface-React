@@ -13,22 +13,34 @@
 
 .flex-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
   justify-content: space-around;
   align-items: center;
   vertical-align: middle;
   min-width: 100%;
 }
 
+.book-search {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  vertical-align: middle;
+  /* max-width; */
+}
+
 .book-tile {
-  width: 10vh;
-  padding-left: 1vh;
+  height: 23vh;
+  padding: 2vh;
+  align-self:center;
 }
 
 .book-list {
   display: flex;
-  flex-flow: row wrap;
-  padding: 1vh;
+  flex-flow: column;
+  padding: 4vw;
+  text-align: center;
+  width: 10vw;
 }
 
 /* h1 {
