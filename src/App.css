@@ -49,6 +49,20 @@
   min-width: 100%;
 }
 
+.flex-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  vertical-align: middle;
+  min-width: 20%;
+}
+
+.header-link {
+  color:white;
+  vertical-align: bottom;
+}
+
 .book-search {
   display: flex;
   flex-flow: row wrap;
