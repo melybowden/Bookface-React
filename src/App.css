@@ -86,6 +86,28 @@
   width: 10vw;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+/* .scrolling-wrapper-flexbox::-webkit-scrollbar {
+  display: none;
+} */
+
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+.card {
+  flex: 0 0 auto;
+  width: 20%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+}
+
 /* external css: flickity.css */
 
 * {
