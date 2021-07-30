@@ -27,11 +27,6 @@ export default class Header extends Component {
                   <div><Link to="/library" className="header-link">My Library</Link></div>
                   <h3 style={{color:'white'}}>Hello, {this.props.user}</h3> 
                 </div>
-
-                {/* <div className="flex-container">
-                  <button>Search here</button>
-                  <button>My Library</button>
-                </div> */}
             </div>
         )
     }
