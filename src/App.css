@@ -11,6 +11,35 @@
   top: 0px;
 }
 
+.book-tmb {
+  /* height: 20vh; */
+  /* padding: 2vh; */
+  /* width: auto; */
+  max-width: 7vw;
+  /* max-height: 20vh; */
+  min-height: 17vh;
+  padding: 2vh;
+}
+
+.book {
+  vertical-align: top;
+  padding: 2vh;
+  display: flex;
+  flex-flow: column;
+  width: 7vw;
+}
+
+.shelf {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: top;
+  /* vertical-align: text-top; */
+  vertical-align: top;
+  width: 100vw;
+  text-align: center;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row wrap;
