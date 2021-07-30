@@ -12,7 +12,7 @@ function App() {
       {/* <Login /> */}
       {/* <Header /> */}
       {/* <Library /> */}
-      <Search />
+      {/* <Search /> */}
     </div>
   );
 }

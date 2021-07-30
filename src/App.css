@@ -1,6 +1,6 @@
 .header {
   flex-direction: column;
-  background-color: aquamarine;
+  background-color: #1877F2;
   text-align: center;
   /* white-space: nowrap; */
   min-height: 3vh;
@@ -43,14 +43,33 @@
   width: 10vw;
 }
 
-/* h1 {
-  margin: 0;
-  color: blueviolet;
-  white-space: nowrap;
+/* external css: flickity.css */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-h3 {
-  margin: 0;
-  color: blueviolet;
-  white-space: nowrap;
-} */
+body { font-family: sans-serif; }
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery-cell {
+  width: 20%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}

@@ -1,0 +1,843 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1900,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "GNnxzQEACAAJ",
+      "etag": "5+Z2xVz1+j0",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/GNnxzQEACAAJ",
+      "volumeInfo": {
+        "title": "The Fellowship of the Ring",
+        "subtitle": "Being the First Part of the Lord of the Rings",
+        "authors": [
+          "J. R. R. Tolkien"
+        ],
+        "publisher": "Mariner Books",
+        "publishedDate": "2003-09",
+        "description": "After discovering the true nature of the One Ring, Bilbo Baggins entrusts it to the care of his young cousin, Frodo, who is charged with bringing about its destruction and thus foiling the plans of the Dark Lord.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0618346252"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780618346257"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 398,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 2390,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=GNnxzQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=GNnxzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=GNnxzQEACAAJ&dq=lord+of+the+rings&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=GNnxzQEACAAJ&dq=lord+of+the+rings&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Fellowship_of_the_Ring.html?hl=&id=GNnxzQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=GNnxzQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "After discovering the true nature of the One Ring, Bilbo Baggins entrusts it to the care of his young cousin, Frodo, who is charged with bringing about its destruction and thus foiling the plans of the Dark Lord."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "aWZzLPhY4o0C",
+      "etag": "ESpJi0vSkfs",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/aWZzLPhY4o0C",
+      "volumeInfo": {
+        "title": "The Fellowship of the Ring",
+        "subtitle": "Being the First Part of The Lord of the Rings",
+        "authors": [
+          "J.R.R. Tolkien"
+        ],
+        "publisher": "Houghton Mifflin Harcourt",
+        "publishedDate": "2012-02-15",
+        "description": "The first volume in J.R.R. Tolkien's epic adventure THE LORD OF THE RINGS One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit. In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose. “A unique, wholly realized other world, evoked from deep in the well of Time, massively detailed, absorbingly entertaining, profound in meaning.” – New York Times",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780547952017"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0547952015"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 432,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 93,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "3.22.21.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=aWZzLPhY4o0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=aWZzLPhY4o0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=aWZzLPhY4o0C&pg=PP1&dq=lord+of+the+rings&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=aWZzLPhY4o0C&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=aWZzLPhY4o0C"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "retailPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=aWZzLPhY4o0C&rdid=book-aWZzLPhY4o0C&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 9990000,
+              "currencyCode": "USD"
+            },
+            "retailPrice": {
+              "amountInMicros": 9990000,
+              "currencyCode": "USD"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/The_Fellowship_of_the_Ring-sample-epub.acsm?id=aWZzLPhY4o0C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/The_Fellowship_of_the_Ring-sample-pdf.acsm?id=aWZzLPhY4o0C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=aWZzLPhY4o0C&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "The first volume in J.R.R. Tolkien&#39;s epic adventure THE LORD OF THE RINGS One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them In ancient times the Rings of Power were crafted by the ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "AVVoPwAACAAJ",
+      "etag": "K6avgb8UMrw",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/AVVoPwAACAAJ",
+      "volumeInfo": {
+        "title": "The Lord of the Rings",
+        "authors": [
+          "J. R. R. Tolkien"
+        ],
+        "publisher": "Mariner Books",
+        "publishedDate": "2012",
+        "description": "Presents the epic depicting the Great War of the Ring, a struggle between good and evil in Middle-earth, following the odyssey of Frodo the hobbit and his companions on a quest to destroy the Ring of Power.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0544003411"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780544003415"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 1178,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 3205,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=AVVoPwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=AVVoPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=AVVoPwAACAAJ&dq=lord+of+the+rings&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=AVVoPwAACAAJ&dq=lord+of+the+rings&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Lord_of_the_Rings.html?hl=&id=AVVoPwAACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=AVVoPwAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Presents the epic depicting the Great War of the Ring, a struggle between good and evil in Middle-earth, following the odyssey of Frodo the hobbit and his companions on a quest to destroy the Ring of Power."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "yl4dILkcqm4C",
+      "etag": "tgA4SjMZ6VA",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/yl4dILkcqm4C",
+      "volumeInfo": {
+        "title": "The Lord of the Rings",
+        "subtitle": "One Volume",
+        "authors": [
+          "J.R.R. Tolkien"
+        ],
+        "publisher": "Houghton Mifflin Harcourt",
+        "publishedDate": "2012-02-15",
+        "description": "A PBS Great American Read Top 100 Pick One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the hobbit Bilbo Baggins. From Sauron's fastness in the Dark Tower of Mordor, his power spread far and wide. Sauron gathered all the Great Rings to him, but always he searched for the One Ring that would complete his dominion. When Bilbo reached his eleventy-first birthday he disappeared, bequeathing to his young cousin Frodo the Ruling Ring and a perilous quest: to journey across Middle-earth, deep into the shadow of the Dark Lord, and destroy the Ring by casting it into the Cracks of Doom. The Lord of the Rings tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard; the hobbits Merry, Pippin, and Sam; Gimli the Dwarf; Legolas the Elf; Boromir of Gondor; and a tall, mysterious stranger called Strider. This new edition includes the fiftieth-anniversary fully corrected text setting and, for the first time, an extensive new index. J.R.R. Tolkien (1892-1973), beloved throughout the world as the creator of The Hobbit, The Lord of the Rings, and The Silmarillion, was a professor of Anglo-Saxon at Oxford, a fellow of Pembroke College, and a fellow of Merton College until his retirement in 1959. His chief interest was the linguistic aspects of the early English written tradition, but while he studied classic works of the past, he was creating a set of his own.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780547951942"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0547951949"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 1216,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 63,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.17.17.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=yl4dILkcqm4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=yl4dILkcqm4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=yl4dILkcqm4C&printsec=frontcover&dq=lord+of+the+rings&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=yl4dILkcqm4C&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=yl4dILkcqm4C"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 16.99,
+          "currencyCode": "USD"
+        },
+        "retailPrice": {
+          "amount": 16.99,
+          "currencyCode": "USD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=yl4dILkcqm4C&rdid=book-yl4dILkcqm4C&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 16990000,
+              "currencyCode": "USD"
+            },
+            "retailPrice": {
+              "amountInMicros": 16990000,
+              "currencyCode": "USD"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/The_Lord_of_the_Rings-sample-epub.acsm?id=yl4dILkcqm4C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/The_Lord_of_the_Rings-sample-pdf.acsm?id=yl4dILkcqm4C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=yl4dILkcqm4C&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This new edition includes the fiftieth-anniversary fully corrected text setting and, for the first time, an extensive new index."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "lqHNugAACAAJ",
+      "etag": "JkOUSMX1Emc",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/lqHNugAACAAJ",
+      "volumeInfo": {
+        "title": "The Fellowship of the Ring",
+        "subtitle": "Being the First Part of the Lord of the Rings",
+        "authors": [
+          "J. R. R. Tolkien"
+        ],
+        "publisher": "HarperCollins",
+        "publishedDate": "2012-03-01",
+        "description": "Sauron, the Dark Lord, has gathered to him all the Rings of Power - the means by which he intends to rule Middle-earth. All he lacks in his plans for dominion is the One Ring - the ring that rules them all - which has fallen into the hands of the hobbit, Bilbo Baggins.In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose.To celebrate the release of the first of Peter Jackson's two-part film adaptation of The Hobbit, THE HOBBIT: AN UNEXPECTED JOURNEY, this first part of THE LORD OF THE RINGS is available for a limited time with an exclusive cover image from Peter Jackson's award-winning trilogy.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0007488319"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780007488315"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 448,
+        "printType": "BOOK",
+        "categories": [
+          "Baggins, Frodo (Fictitious character)"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 2546,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=lqHNugAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=lqHNugAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=lqHNugAACAAJ&dq=lord+of+the+rings&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=lqHNugAACAAJ&dq=lord+of+the+rings&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Fellowship_of_the_Ring.html?hl=&id=lqHNugAACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=lqHNugAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Continuing the story begun in The Hobbit, this is the first part of Tolkien&#39;s epic masterpiece, The Lord of the Rings, featuring an exclusive cover image from the film, the definitive text, and a detailed map of Middle-earth."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "nh0eAQAAIAAJ",
+      "etag": "I9X0cBUv6yA",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/nh0eAQAAIAAJ",
+      "volumeInfo": {
+        "title": "The Lord of the Rings",
+        "subtitle": "A Reader's Companion",
+        "authors": [
+          "Wayne G. Hammond",
+          "Christina Scull"
+        ],
+        "publisher": "Houghton Mifflin Harcourt",
+        "publishedDate": "2005",
+        "description": "A companion reference to the film trilogy and the book presents changes made to the original novel, references to various illustrations and maps, explanations of unique words, and a primer on Tolkien's invented languages.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105114581718"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 894,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.3.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=nh0eAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=nh0eAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=nh0eAQAAIAAJ&q=lord+of+the+rings&dq=lord+of+the+rings&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=nh0eAQAAIAAJ&dq=lord+of+the+rings&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Lord_of_the_Rings.html?hl=&id=nh0eAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=nh0eAQAAIAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "A companion reference to the film trilogy and the book presents changes made to the original novel, references to various illustrations and maps, explanations of unique words, and a primer on Tolkien&#39;s invented languages."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "sBk9DQEACAAJ",
+      "etag": "Dz0MBGRxz9o",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/sBk9DQEACAAJ",
+      "volumeInfo": {
+        "title": "The Lord of the Rings",
+        "authors": [
+          "J. R. R. Tolkien"
+        ],
+        "publisher": "Houghton Mifflin",
+        "publishedDate": "2013-10-29",
+        "description": "Presents the epic depicting the Great War of the Ring, a struggle between good and evil in Middle-earth, following the odyssey of Frodo the hobbit and his companions on a quest to destroy the Ring of Power.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0544273443"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780544273443"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 1178,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 4,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=sBk9DQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=sBk9DQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=sBk9DQEACAAJ&dq=lord+of+the+rings&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=sBk9DQEACAAJ&dq=lord+of+the+rings&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Lord_of_the_Rings.html?hl=&id=sBk9DQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=sBk9DQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "oaIRrgEACAAJ",
+      "etag": "ZOG82jdqaUI",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/oaIRrgEACAAJ",
+      "volumeInfo": {
+        "title": "The Art of the Lord of the Rings by J.R.R. Tolkien",
+        "authors": [
+          "J. R. R. Tolkien"
+        ],
+        "publisher": "Houghton Mifflin",
+        "publishedDate": "2015-10-13",
+        "description": "Tolkien's complete artwork for \"The Lord of the Rings,\" presented for the first time in celebration of its 60th anniversary, includes more than 180 sketches, drawings, paintings, maps, and plans, more than half of which have not been previously published.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0544636341"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780544636347"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 240,
+        "printType": "BOOK",
+        "categories": [
+          "Art"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=oaIRrgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=oaIRrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=oaIRrgEACAAJ&dq=lord+of+the+rings&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=oaIRrgEACAAJ&dq=lord+of+the+rings&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Art_of_the_Lord_of_the_Rings_by_J_R.html?hl=&id=oaIRrgEACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=oaIRrgEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "WAYNE G. HAMMOND and CHRISTINA SCULL are leading experts on Tolkien and the authors of the acclaimed The Art of the Hobbit by J.R.R. Tolkien, J.R.R. Tolkien: Artist and Illustrator, The Lord of the Rings: A Reader s Companion, and The J.R.R ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "AN8TDQAAQBAJ",
+      "etag": "IiY2Boo6+UY",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/AN8TDQAAQBAJ",
+      "volumeInfo": {
+        "title": "Guide to Middle Earth",
+        "subtitle": "Tolkien and The Lord of the Rings",
+        "authors": [
+          "Colin Duriez"
+        ],
+        "publisher": "The History Press",
+        "publishedDate": "2004-12-09",
+        "description": "This absorbing insight into the mind behind Middle-earth will introduce or remind readers of the abundance that exists in Tolkien's thought and imagination. Interweaving sections explore The Lord of the Rings and its history; the key themes, concepts and images in Tolkein's work; the people and places in his life, and his other writings. At the heart of the book is an indispensible A-Z of middle-earth, with detailed entries on Beings, Places, Things and Events.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780752495620"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0752495623"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 316,
+        "printType": "BOOK",
+        "categories": [
+          "Biography & Autobiography"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=AN8TDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=AN8TDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=AN8TDQAAQBAJ&pg=PP1&dq=lord+of+the+rings&hl=&cd=9&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=AN8TDQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=AN8TDQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 2.99,
+          "currencyCode": "USD"
+        },
+        "retailPrice": {
+          "amount": 2.99,
+          "currencyCode": "USD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=AN8TDQAAQBAJ&rdid=book-AN8TDQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 2990000,
+              "currencyCode": "USD"
+            },
+            "retailPrice": {
+              "amountInMicros": 2990000,
+              "currencyCode": "USD"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/Guide_to_Middle_Earth-sample-epub.acsm?id=AN8TDQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/Guide_to_Middle_Earth-sample-pdf.acsm?id=AN8TDQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=AN8TDQAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "At the heart of the book is an indispensible A-Z of middle-earth, with detailed entries on Beings, Places, Things and Events."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "xdHoDwAAQBAJ",
+      "etag": "dwTR4rRNdC8",
+      "selfLink": "https://content-books.googleapis.com/books/v1/volumes/xdHoDwAAQBAJ",
+      "volumeInfo": {
+        "title": "For the Love of Books",
+        "subtitle": "Designing and Curating a Home Library",
+        "authors": [
+          "Thatcher Wine",
+          "Elizabeth Lane"
+        ],
+        "publisher": "Gibbs Smith",
+        "publishedDate": "2020-06-02",
+        "description": "A celebration of the meaning and comfort printed books bring to our homes and lives, from the curation and design experts at Juniper Books. Explore the significance of the home library, embellished with alluring photography and illustrations, in a keepsake worthy of any bibliophile’s collection. For the Love of Books shares the vision of Juniper Books, a business that embraces the roles that books fulfill in our lives and their staying power. It recounts the history of books and private libraries, and champions the resilience of books in the digital era. Dive into the nuances that define books for reading, books for decoration, and books for inspiration. Instructive chapters provide useful details for creating and curating one’s own home library, whether it be a single shelf or multiple rooms each with their own collection. You will never look at your bookshelves the same way again. For the Love of Books is about storytelling beyond the pages of our favorite books. Our books—the ones we choose to keep—tell the story of who we are. They remind us who we once were and who we aspire to be. Thatcher Wine founded Juniper Books in 2001. The company creates custom libraries and has perfected the art of turning books inside out to allow for books to tell stories not just to us, but about us. Working with booklovers, homeowners, and designers, Juniper Books has provided the world with a fresh new approach to the printed book. Thatcher grew up in New York City where his parents owned and operated The Quilted Giraffe, one of the most innovative restaurants in America. Thatcher graduated from Dartmouth College with a degree in history and art history and lives in Boulder, Colorado. Elizabeth Lane is the founder of Quarterlane, a quarterly subscription book service which merged with Juniper Books in 2018. She is also the book buyer for her local independent bookstore, Partners Village Store and Kitchen in Westport, Massachusetts. Prior to working in books, Elizabeth worked in contemporary visual art—in galleries, nonprofit initiatives and museums in New York, Austin, and Chicago. Elizabeth graduated from Davidson College with a degree in art history and received her masters degree from the School of the Art Institute of Chicago.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781423652168"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1423652169"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 264,
+        "printType": "BOOK",
+        "categories": [
+          "House & Home"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xdHoDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=xdHoDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=xdHoDwAAQBAJ&pg=PP1&dq=lord+of+the+rings&hl=&cd=10&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=xdHoDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=xdHoDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 29.99,
+          "currencyCode": "USD"
+        },
+        "retailPrice": {
+          "amount": 29.99,
+          "currencyCode": "USD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=xdHoDwAAQBAJ&rdid=book-xdHoDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 29990000,
+              "currencyCode": "USD"
+            },
+            "retailPrice": {
+              "amountInMicros": 29990000,
+              "currencyCode": "USD"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/For_the_Love_of_Books-sample-epub.acsm?id=xdHoDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com/books/download/For_the_Love_of_Books-sample-pdf.acsm?id=xdHoDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=xdHoDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "You will never look at your bookshelves the same way again. For the Love of Books is about storytelling beyond the pages of our favorite books. Our books—the ones we choose to keep—tell the story of who we are."
+      }
+    }
+  ]
+}

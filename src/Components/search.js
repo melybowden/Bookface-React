@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Booktile from './booktile';
 import book_not_found from './book_not_found.jpg';
+import Header from './header';
 
 export default class Search extends Component {
     constructor(props) {
@@ -46,6 +47,7 @@ export default class Search extends Component {
       render() {
         return (
           <div>
+            <Header user={this.props.match.params.user}/>
             <form onSubmit={this.handleSubmit}>
               <label>
                 Search by book title:  
