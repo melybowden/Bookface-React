@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import Login from './login'
-import logo from '../logo.svg'
+import logo from '../logo_white.svg'
+import text_logo from '../text_logo.svg'
 
 export default class Header extends Component {
     constructor(props) {
@@ -17,12 +17,10 @@ export default class Header extends Component {
     render() {
         return (
             <div className="header">
-                {/* <Login /> */}
-                <div className="flex-container">
-                  <img src={logo} alt="logo" height={130} width={130} />
-                  <h1>BookFace</h1>
+                <div className="flex-container" style={{paddingTop:'2vh'}}>
+                  <img src={logo} alt="logo" height={80} width={80} />
+                  <img src={text_logo} alt="Bookface" height={80}/>
                   <h3>Hello, {this.props.user}</h3> 
-                  {/* TODO: Routes for user name */}
                 </div>
 
                 <div className="flex-container">
