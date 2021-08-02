@@ -11,6 +11,24 @@
   top: 0px;
 }
 
+.lockscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #74ABE2, #1877F2);
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-card {
+  background-color: aliceblue;
+  border-radius: 5%;
+  height: 300px;
+  width: 300px;
+  align-items: center;
+  vertical-align: middle;
+}
+
 .book-tmb {
   /* height: 20vh; */
   /* padding: 2vh; */
@@ -103,9 +121,11 @@
 .card {
   flex: 0 0 auto;
   width: 20%;
-  height: 200px;
+  /* height: 200px; */
+  height: auto;
   margin-right: 10px;
   background: #8C8;
+  scroll-behavior: smooth;
 }
 
 /* external css: flickity.css */

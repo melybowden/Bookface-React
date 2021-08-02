@@ -23,7 +23,8 @@ export default class login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div className="lockscreen">
+      <form onSubmit={this.handleSubmit} className="login-card">
         <label>
           Username: 
           <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
@@ -36,6 +37,7 @@ export default class login extends Component {
         <br />
         <input type="submit" value="Submit" />
       </form>
+      </div>
     );
   }
 }
