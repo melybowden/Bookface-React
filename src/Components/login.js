@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import logo from '../logo_white.svg';
 
 export default class login extends Component {
   constructor(props) {
@@ -19,24 +22,32 @@ export default class login extends Component {
   handleSubmit(event) {
     alert('User: ' + this.state.username + ' logged in!');
     event.preventDefault();
-  }
+    axios.post('https://mysterious-plains-09256.herokuapp.com/',{ 
+      username: '',
+      password:''
+  })
+  .then(results=>console.log(results))}
 
   render() {
     return (
       <div className="lockscreen">
-      <form onSubmit={this.handleSubmit} className="login-card">
-        <label>
-          Username: 
-          <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-        </label>
+        <img src={logo} alt="BookFace-Logo"/>
+        <div className="login-card">
+      <form onSubmit={this.handleSubmit}>
+
+     <h1 style={{color: '#1877F2'}}>Login</h1>
+          <input type="text" name="username"  placeholder="Enter Username" value={this.state.username} onChange={this.handleChange} />
         <br />
-        <label>
-          Password: 
-          <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
-        </label>
+       
+          <input type="text" name="password" placeholder="Enter Password" value={this.state.password} onChange={this.handleChange} />
+
         <br />
         <input type="submit" value="Submit" />
       </form>
+      <div style={{marginTop: "30%"}}>
+      <Link to="/createuser" >New User? Create Account Here</Link>
+      </div>
+      </div>
       </div>
     );
   }
