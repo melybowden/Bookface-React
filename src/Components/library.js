@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from './header'
-import Flickity from 'flickity';
+// import Flickity from 'flickity';
 import axios from 'axios';
 import Shelf from './shelf';
 export default class Library extends Component {
@@ -20,9 +20,9 @@ export default class Library extends Component {
       
 
         return (
-            <div>
-              <link rel="stylesheet" href="../node_modules/flickity/css/flickity.css" media="screen"/>
-              <script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script>
+            <div style={{overflow:'hidden'}}>
+              {/* <link rel="stylesheet" href="../node_modules/flickity/css/flickity.css" media="screen"/>
+              <script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script> */}
               
               <Header user={this.props.match.params.user}/>
               <Shelf shelfName="Book Club" booklist={this.state.booklist} />
