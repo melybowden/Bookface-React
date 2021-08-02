@@ -29,7 +29,7 @@ export default class Search extends Component {
         .then(res => 
           // console.log(res.data.items),
           this.setState({searchRes: res.data.items})
-          
+          // TODO: more error checking for when properties don't exist in Google API results
           // year: publishedDate YYYY-MM-DD
           // ISBN: industryIdentifiers[1].identifier ([0] is ISBN 10 not ISBN 13)
         );
@@ -46,17 +46,13 @@ export default class Search extends Component {
     
       render() {
         return (
-          <div>
+          <div style={{overflow:'hidden'}}>
             <Header user={this.props.match.params.user}/>
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                Search by book title:  
-                <input type="text" name="keyword" value={this.state.keyword} onChange={this.handleChange} />
-              </label>
-              <input type="submit" value="Search" />
+            <form onSubmit={this.handleSubmit} >
+              <input type="text" name="keyword" value={this.state.keyword} placeholder="Search for a book..." onChange={this.handleChange} />
+              <input type="submit" value="Search!" />
             </form>
             <div className="book-search">
-            {/* book.volumeInfo.industryIdentifiers[1].identifier */}
             {this.state.searchRes.map(book => 
               <Booktile key={this.getIdentifier(book.volumeInfo.industryIdentifiers)} 
               title={book.volumeInfo.title} 

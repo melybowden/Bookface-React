@@ -4,6 +4,8 @@ import React, {useState} from 'react'
 export default function Booktile(props) {
     const [shelf, setShelf] = useState('');
 
+    const [isShown, setIsShown] = useState(false);
+
     const handleSubmit = (event) => {
       event.preventDefault();
       
@@ -26,8 +28,25 @@ export default function Booktile(props) {
       });
   }
 
+  function showShelves() {
     return (
-        <div className="book-list">
+      <form onSubmit={handleSubmit}>
+        <label>
+          Add to shelf:
+          <select value={shelf} onChange={e => setShelf(e.target.value)}>
+            <option value="Grapefruit">Grapefruit</option>
+            <option value="Lime">Lime</option>
+            <option value="Coconut">Coconut</option>
+            <option value="Mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Add to Shelf" />
+      </form>
+    )
+  }
+
+    return (
+        <div className="book-list" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
             <img src={props.imgURL} alt="book cover" className="book-tile"/>
             <div>
                 <b>{props.title}</b>
@@ -36,18 +55,7 @@ export default function Booktile(props) {
                 <div>ISBN-13:</div>
                 <div>{props.isbn}</div>
             </div>
-            <form onSubmit={handleSubmit}>
-              <label>
-                Add to shelf:
-                <select value={shelf} onChange={e => setShelf(e.target.value)}>
-                  <option value="Grapefruit">Grapefruit</option>
-                  <option value="Lime">Lime</option>
-                  <option value="Coconut">Coconut</option>
-                  <option value="Mango">Mango</option>
-                </select>
-              </label>
-              <input type="submit" value="Add to Shelf" />
-            </form>
+            {isShown && showShelves()}
         </div>
     )
 }
