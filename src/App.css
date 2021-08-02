@@ -18,7 +18,7 @@
   background: linear-gradient(to bottom, #74ABE2, #1877F2);
   height: 100vh;
   width: 100vw;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .login-card {
@@ -31,6 +31,7 @@
   flex-direction: column;
   padding: 5px;
   text-align: center;
+  margin: auto;
 }
 
 .book-tmb {

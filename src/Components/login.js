@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import logo from '../logo_white.svg';
+import logo from '../login_logo.svg';
 
 export default class login extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ export default class login extends Component {
   render() {
     return (
       <div className="lockscreen">
-        <img src={logo} alt="BookFace-Logo"/>
+        <img style={{height:"100%"}} src={logo} alt="BookFace-Logo" />
         <div className="login-card">
       <form onSubmit={this.handleSubmit}>
 
