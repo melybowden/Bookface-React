@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import logotype from '../welcome_logo.svg';
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ export default class CreateUser extends Component {
     this.state = {
       username: '',
       password:'',
-      Display_Name: ''
+      displayname: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -16,34 +17,36 @@ export default class CreateUser extends Component {
 
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value});
+    // TODO: Check if username is available on change (GET)
+    // TODO: Check pw meets criteria
+    // TODO: retype pw & ensure matching
+    // TODO: flavor text for creating username, un vs display name, and creating pw
+    // TODO: prevent submission until username unique (in DB) & pw criteria met
   }
 
   handleSubmit(event) {
-    alert('User: ' + this.state.username + ' Created ');
     event.preventDefault();
-    axios.post('https://mysterious-plains-09256.herokuapp.com/',{ 
-    username: '',
-    password:'',
-    Display_Name: ''
-})
-.then(results=>console.log(results))
+    axios.post('https://mysterious-plains-09256.herokuapp.com/', this.state)
+    .then(results => 
+      // console.log(results)
+      alert('User: ' + this.state.username + ' Created '))
+    .catch(error => 
+      console.log("error: " + error))
   }
 
   render() {
     return (
-      <div className="lockscreen">
-      <form onSubmit={this.handleSubmit} className="login-card">
-      <h1 style={{color: '#1877F2'}}>Create Account</h1>
+      <div className="lockscreen" style={{flexDirection:'column'}}>
+        <img src={logotype} alt="Bookface logotype" style={{width:'600px', marginTop:'100px'}}/>
+        <form onSubmit={this.handleSubmit} className="login-card">
+          <h1 style={{color: '#1877F2'}}>Create Account</h1>
           <input type="text" name="username" placeholder="Enter Username" value={this.state.username} onChange={this.handleChange} />
-      
-          <input type="text" name="Display_Name" placeholder="Enter Display Name" value={this.state.Display_Name} onChange={this.handleChange} />
-        <br />
-
+          <input type="text" name="displayname" placeholder="Enter Display Name" value={this.state.displayname} onChange={this.handleChange} />
+          <br />
           <input type="text" name="password"placeholder="Enter Password" value={this.state.password} onChange={this.handleChange} />
-
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     );
   }
