@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { Route, NavLink, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import CreateUser from './Components/createuser';
+import './index.css';
+
 import App from './App';
+import CreateUser from './Components/createuser';
 import Library from './Components/library';
 import Login from './Components/login';
 import NotFound from './Components/notfound';
@@ -22,9 +23,7 @@ const routing = (
         <Route path="/search" component={Search} />
         <Route path="/library" component={Library} />
         <Route path="/createuser" component={CreateUser} />
-        {/* <Route path="/users/:id" component={Users} />  */}
         {/* check for parameters first! */}
-        {/* <Route path="/users" component={Users} /> */}
         <Route component={NotFound} />
       </Switch>
     </div>
