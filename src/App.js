@@ -1,17 +1,14 @@
 import './App.css';
 
-// import Login from "./Components/login";
-// import Header from "./Components/header";
+// import Header from './Components/header';
 // import Library from './Components/library';
-import Search from './Components/search';
-import React, { useState } from 'react';
+// import Search from './Components/search';
+import React from 'react';
 import Login from './Components/login';
 import useToken from './Components/useToken';
 
-const { token, setToken } = useToken();
-
 function App() {
-  const token = getToken();
+  const { token, setToken } = useToken();
 
   if(!token) {
     return <Login setToken={setToken} />
