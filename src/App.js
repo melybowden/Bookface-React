@@ -6,17 +6,9 @@ import './App.css';
 import Search from './Components/search';
 import React, { useState } from 'react';
 import Login from './Components/login';
+import useToken from './Components/useToken';
 
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken)); 
-  // Expects {token: 'test123'}
-}
-
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
+const { token, setToken } = useToken();
 
 function App() {
   const token = getToken();
