@@ -3,18 +3,20 @@ import React, {useState} from 'react'
 
 export default function Booktile(props) {
     const [shelf, setShelf] = useState('');
-
+    const [newShelf, setNewShelf] = useState("false");
     const [isShown, setIsShown] = useState(false);
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      
+      alert("Added " + props.title + " to " + shelf);
       const body = {
         "title": props.title,
         "author": props.author[0],
         "imageURL": props.imgURL,
         "year": props.year,
-        "isbn": props.isbn
+        "isbn": props.isbn,
+        "userdisplayname": props.user,
+        "shelf": props.shelf
       }
 
       // axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -28,18 +30,27 @@ export default function Booktile(props) {
       });
   }
 
+  function cleanShelves(shelves) {
+    var clean = []
+    for (var b in shelves) {
+      if (shelves[b].shelf !== undefined && !(clean.includes(shelves[b].shelf))) {
+        clean.push(shelves[b].shelf)
+      }
+    }
+    return clean
+  }
+
   function showShelves() {
     return (
       <form onSubmit={handleSubmit}>
         <label>
           Add to shelf:
           <select value={shelf} onChange={e => setShelf(e.target.value)}>
-            <option value="Grapefruit">Grapefruit</option>
-            <option value="Lime">Lime</option>
-            <option value="Coconut">Coconut</option>
-            <option value="Mango">Mango</option>
+            {/* {props.shelf.map(b => <option value={b.shelf}>{b.shelf}</option>)} */}
+            {cleanShelves(props.shelf).map(s => <option value={s}>{s}</option>)}
           </select>
         </label>
+        {newShelf ? <input type="text" placeholder="Enter a new shelf name" onChange={e => setShelf(e.target.value)}/> : <></>}
         <input type="submit" value="Add to Shelf" />
       </form>
     )

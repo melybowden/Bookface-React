@@ -8,7 +8,7 @@ export default function Shelf(props) {
 
   const Book = (props) =>
       <div className="book">
-       {props.img != book_not_found ? <img src={props.img} alt="book cover" className="book-tmb"></img>:coverimage(props)}
+       {props.img !== book_not_found ? <img src={props.img} alt="book cover" className="book-tmb"></img>:coverimage(props)}
        <b>{props.title}</b>
       </div>
 

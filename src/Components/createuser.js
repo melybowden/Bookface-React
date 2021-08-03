@@ -17,7 +17,7 @@ export default class CreateUser extends Component {
 
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value});
-    // TODO: Check if username is available on change (GET)
+    // TODO: Check if username is available on change (POST username only onChange)
     // TODO: Check pw meets criteria
     // TODO: retype pw & ensure matching
     // TODO: flavor text for creating username, un vs display name, and creating pw
@@ -28,8 +28,8 @@ export default class CreateUser extends Component {
     event.preventDefault();
     axios.post('https://cygnus-bookface.herokuapp.com/users/register', this.state)
     .then(results => 
-      // console.log(results)
-      alert(results.data.first)
+      console.log(results)
+      // alert(results.data.first)
     )
     .catch(error => 
       console.log("error: " + error))

@@ -9,12 +9,23 @@ export default class Search extends Component {
         super(props);
         this.state = {
           keyword: '',
-          searchRes: []
+          searchRes: [],
+          shelves:[]
         };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.getIdentifier = this.getIdentifier.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+      }
+
+      componentDidMount() {
+        // console.log("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
+        axios.get("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
+        .then(res =>
+          // console.log(res.data)
+          this.setState({shelves: res.data})
+          )
       }
     
       handleChange(event) {
@@ -22,9 +33,7 @@ export default class Search extends Component {
       }
     
       handleSubmit(event) {
-        // alert(this.state.keyword + 'results logged to console')
         event.preventDefault();
-        // axios.get("https://www.googleapis.com/books/v1/volumes?q="+this.state.keyword).then(res => console.log(res.data.items[0].volumeInfo.imageLinks.smallThumbnail))
         axios.get("https://www.googleapis.com/books/v1/volumes?q="+this.state.keyword)
         .then(res => 
           // console.log(res.data.items),
@@ -59,7 +68,9 @@ export default class Search extends Component {
               author={book.volumeInfo.authors} 
               year={book.volumeInfo.publishedDate.substring(0,4)} 
               isbn={this.getIdentifier(book.volumeInfo.industryIdentifiers)}
-              imgURL={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : book_not_found}/>)}
+              imgURL={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : book_not_found}
+              shelf={this.state.shelves}
+              user={this.props.match.params.user}/>)}
             </div>
           </div>
         );

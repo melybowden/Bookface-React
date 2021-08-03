@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import logo from '../logo_white.svg'
 import text_logo from '../text_logo.svg'
 import { NavLink } from 'react-router-dom'
@@ -11,8 +11,12 @@ export default function Header(props) {
             <img src={logo} alt="logo" height={40} width={40} />
             <img src={text_logo} alt="Bookface" height={40}/>
           </div>
-          <div activeClassName="active" className="header-link"><NavLink to="/search">Search</NavLink></div>
-          <div activeClassName="active" className="header-link"><NavLink to="/library">My Library</NavLink></div>
+          {/* <ul>
+            <li><NavLink to="/search" className="header-link" activeClassName="active">Search</NavLink></li>
+            <li><NavLink to="/library" className="header-link" activeClassName="active">My Library</NavLink></li>
+          </ul> */}
+          <h3 className="header-link"><NavLink to="/search" activeClassName="active">Search</NavLink></h3>
+          <h3 className="header-link"><NavLink to="/library" activeClassName="active">My Library</NavLink></h3>
           <h3 style={{color:'white'}}>Hello, {props.user}</h3> 
         </div>
     </div>

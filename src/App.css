@@ -85,21 +85,28 @@
   vertical-align: middle;
   min-width: 20%;
 }
-
+/* https://www.geeksforgeeks.org/create-a-responsive-navbar-using-reactjs/ */
 .header-link {
   color:white;
   vertical-align: bottom;
   height: 4vh;
   width: 100px;
-  /* background-color: aqua; */
+  background-color: aqua;
+  text-decoration:none;
 }
-
-/* .active {
+.header-link:any-link {
+  text-decoration: none;
+}
+.header-link:visited {
+  text-decoration: none;
+}
+.active {
   height: 4vh;
   width: 100px;
   background-color: white;
   color: #1877F2;
-} */
+  text-decoration:none;
+}
 
 .book-search {
   display: flex;

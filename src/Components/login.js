@@ -23,9 +23,9 @@ export default class login extends Component {
     event.preventDefault();
     axios.post('https://cygnus-bookface.herokuapp.com/users/login',this.state)
   .then(results => 
-    // console.log(results)
+    console.log(results)
     // this.props.setToken(results)
-    alert(results.data.first)
+    // alert(results.data.first)
     )
   .catch(error => console.log("error: " + error))
   }
