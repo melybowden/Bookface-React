@@ -26,10 +26,11 @@ export default class CreateUser extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    axios.post('https://mysterious-plains-09256.herokuapp.com/', this.state)
+    axios.post('https://cygnus-bookface.herokuapp.com/users/register', this.state)
     .then(results => 
       // console.log(results)
-      alert('User: ' + this.state.username + ' Created '))
+      alert(results.data.first)
+    )
     .catch(error => 
       console.log("error: " + error))
   }

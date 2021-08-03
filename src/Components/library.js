@@ -10,7 +10,7 @@ export default class Library extends Component {
     }
 
     componentDidMount() {
-      axios.get("https://mysterious-plains-09256.herokuapp.com/bookface")
+      axios.get("https://cygnus-bookface.herokuapp.com/bookface")
       .then(res =>
         this.setState({booklist: res.data})
       );

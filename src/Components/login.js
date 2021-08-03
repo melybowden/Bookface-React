@@ -20,15 +20,13 @@ export default class login extends Component {
   }
 
   handleSubmit(event) {
-    alert('User: ' + this.state.username + ' logged in!');
     event.preventDefault();
-    axios.post('https://mysterious-plains-09256.herokuapp.com/',{ 
-      username: '',
-      password:''
-  })
+    axios.post('https://cygnus-bookface.herokuapp.com/users/login',this.state)
   .then(results => 
     // console.log(results)
-    this.props.setToken(results))
+    // this.props.setToken(results)
+    alert(results.data.first)
+    )
   .catch(error => console.log("error: " + error))
   }
 

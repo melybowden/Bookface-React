@@ -18,7 +18,7 @@ export default function Booktile(props) {
       }
 
       // axios.defaults.headers.post['Content-Type'] = 'application/json';
-      axios.post("https://mysterious-plains-09256.herokuapp.com/bookface", body)
+      axios.post("https://cygnus-bookface.herokuapp.com/bookface", body)
       .then(function (response) {
         console.log(response);
         alert("Added " + props.title + " to " + shelf);
