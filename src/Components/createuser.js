@@ -43,7 +43,7 @@ export default class CreateUser extends Component {
           <input type="text" name="username" placeholder="Enter Username" value={this.state.username} onChange={this.handleChange} />
           <input type="text" name="displayname" placeholder="Enter Display Name" value={this.state.displayname} onChange={this.handleChange} />
           <br />
-          <input type="text" name="password"placeholder="Enter Password" value={this.state.password} onChange={this.handleChange} />
+          <input type="password" name="password"placeholder="Enter Password" value={this.state.password} onChange={this.handleChange} />
           <br />
           <input type="submit" value="Submit" />
         </form>

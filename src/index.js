@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ReactDom from 'react-dom';
 import { Route, NavLink, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+
 import CreateUser from './Components/createuser';
 import App from './App';
 import Library from './Components/library';
@@ -16,7 +16,7 @@ const routing = (
     <div>
       <Switch>
         <Route path="/login" component={Login} />
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={App} />
         <Route path="/search/:user" component={Search} />
         <Route path="/library/:user" component={Library} />
         <Route path="/search" component={Search} />

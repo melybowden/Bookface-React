@@ -26,7 +26,9 @@ export default class login extends Component {
       username: '',
       password:''
   })
-  .then(results => console.log(results))
+  .then(results => 
+    // console.log(results)
+    this.props.setToken(results))
   .catch(error => console.log("error: " + error))
   }
 
@@ -39,7 +41,7 @@ export default class login extends Component {
             <h1 style={{color: '#1877F2'}}>Login</h1>
             <input type="text" name="username"  placeholder="Enter Username" value={this.state.username} onChange={this.handleChange} />
             <br />
-            <input type="text" name="password" placeholder="Enter Password" value={this.state.password} onChange={this.handleChange} />
+            <input type="password" name="password" placeholder="Enter Password" value={this.state.password} onChange={this.handleChange} />
             <br />
             <input type="submit" value="Submit" />
           </form>
