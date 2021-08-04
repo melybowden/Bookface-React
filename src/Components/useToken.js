@@ -5,6 +5,8 @@ export default function useToken() {
     const tokenString = sessionStorage.getItem('token');
     const userToken = JSON.parse(tokenString);
     console.log(userToken)
+
+    // {first:"user successfully logged in" second:{username:name, password:pass, displayname:name, id:1, loggedIn:true}}
     return userToken?.token
   };
   const [token, setToken] = useState(getToken());
