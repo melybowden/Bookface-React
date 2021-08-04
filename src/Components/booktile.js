@@ -3,12 +3,13 @@ import React, {useState} from 'react'
 
 export default function Booktile(props) {
     const [shelf, setShelf] = useState('');
-    const [newShelf, setNewShelf] = useState("false");
+    const [newShelf, setNewShelf] = useState();
     const [isShown, setIsShown] = useState(false);
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      alert("Added " + props.title + " to " + shelf);
+      var addTo = shelf === "New Shelf" ? newShelf : shelf;
+      alert("Added " + props.title + " to " + addTo);
       const body = {
         "title": props.title,
         "author": props.author[0],
@@ -23,7 +24,7 @@ export default function Booktile(props) {
       axios.post("https://cygnus-bookface.herokuapp.com/bookface", body)
       .then(function (response) {
         console.log(response);
-        alert("Added " + props.title + " to " + shelf);
+        alert("Added " + props.title + " to " + addTo);
       })
       .catch(function (error) {
         console.log("error: "+error);
@@ -37,6 +38,7 @@ export default function Booktile(props) {
         clean.push(shelves[b].shelf)
       }
     }
+    clean.push("New Shelf")
     return clean
   }
 
@@ -50,7 +52,7 @@ export default function Booktile(props) {
             {cleanShelves(props.shelf).map(s => <option value={s}>{s}</option>)}
           </select>
         </label>
-        {newShelf ? <input type="text" placeholder="Enter a new shelf name" onChange={e => setShelf(e.target.value)}/> : <></>}
+        {shelf === "New Shelf" ? <input type="text" placeholder="Enter a new shelf name" onChange={e => setNewShelf(e.target.value)}/> : <></>}
         <input type="submit" value="Add to Shelf" />
       </form>
     )
