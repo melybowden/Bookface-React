@@ -1,9 +1,11 @@
 import React from 'react'
 import logo from '../logo_white.svg'
 import text_logo from '../text_logo.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
 export default function Header(props) {
+  let {user} = useParams();
+  var 
   return (
     <div className="header">
         <div className="flex-container" style={{padding:'2vh'}}>
@@ -15,8 +17,8 @@ export default function Header(props) {
             <li><NavLink to="/search" className="header-link" activeClassName="active">Search</NavLink></li>
             <li><NavLink to="/library" className="header-link" activeClassName="active">My Library</NavLink></li>
           </ul> */}
-          <h3 className="header-link"><NavLink to="/search" activeClassName="active">Search</NavLink></h3>
-          <h3 className="header-link"><NavLink to="/library" activeClassName="active">My Library</NavLink></h3>
+          <h3 className="header-link"><NavLink to={"/search/"+user} activeClassName="active">Search</NavLink></h3>
+          <h3 className="header-link"><NavLink to={"/library/"+user} activeClassName="active">My Library</NavLink></h3>
           <h3 style={{color:'white'}}>Hello, {props.user}</h3> 
         </div>
     </div>
