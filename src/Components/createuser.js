@@ -3,14 +3,27 @@ import React, { useState } from 'react';
 import logotype from '../welcome_logo.svg';
 import useToken from './useToken'
 import { Link, useHistory } from 'react-router-dom';
+import firebase from "firebase/app";
+import "firebase/database";
 
-async function loginUser(credentials) {
-  console.log("login")
-  return axios.post('https://cygnus-bookface.herokuapp.com/users/register', credentials)
-    .then(res => 
-      // console.log(res)
-      res.data
-    ) // {first: "user created?logged in?failed?", second: {username:"",displayname:"",id:#, loggedIn:bool,password:""}}
+// async function loginUser(credentials) {
+//   console.log("login")
+//   return axios.post('https://cygnus-bookface.herokuapp.com/users/register', credentials)
+//     .then(res => 
+//       // console.log(res)
+//       res.data
+//     ) // {first: "user created?logged in?failed?", second: {username:"",displayname:"",id:#, loggedIn:bool,password:""}}
+//  }
+
+ // Get a reference to the database service
+//  var database = firebase.database();
+
+ function writeUserData(username, name, password) {
+   firebase.database().ref('users/' + username).set({
+     username: username,
+     displayname: name,
+     password : password
+   });
  }
 
 export default function CreateUser() {
@@ -22,13 +35,16 @@ export default function CreateUser() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = await loginUser({
-      username,
-      password,
-      displayname
-    });
+    // const token = await loginUser({
+    //   username,
+    //   password,
+    //   displayname
+    // });
     // console.log(token)
-    setToken(token);
+
+    writeUserData(username, displayname, password);
+
+    // setToken(token);
     history.push("/");
   }
 

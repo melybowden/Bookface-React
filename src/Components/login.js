@@ -1,16 +1,64 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import logo from '../login_logo.svg';
+import firebase from 'firebase/app';
+import "firebase/database";
+// async function loginUser(credentials) {
+//   console.log("login")
+//   return axios.post('https://cygnus-bookface.herokuapp.com/users/login', credentials)
+//     .then(res => 
+//       // console.log(res)
+//       res.data
+//     ) // {first: "user created?logged in?failed?", second: {username:"",displayname:"",id:#, loggedIn:bool,password:""}}
+//  }
 
-async function loginUser(credentials) {
-  console.log("login")
-  return axios.post('https://cygnus-bookface.herokuapp.com/users/login', credentials)
-    .then(res => 
-      // console.log(res)
-      res.data
-    ) // {first: "user created?logged in?failed?", second: {username:"",displayname:"",id:#, loggedIn:bool,password:""}}
- }
+// function writeUserData(username, password) {
+//   firebase.database().ref('users/' + username).set({
+//     username: username,
+//     password : password
+//   });
+// }
+
+function CheckUserData(username, password, history) {
+  const dbRef = firebase.database().ref();
+  dbRef.child("users").child(username).get().then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+      if (snapshot.val().password === password) {
+        console.log("User logged in!");
+        history.push('/library/'+snapshot.val().displayname);
+      }
+      else {
+        console.log("Username or password do not match.");
+        history.push('/')
+      }
+    } else {
+      console.log("User does not exist.");
+      history.push('/createuser');
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+  // firebase.database().ref('users').orderByChild('username').equalTo(username).once("value",snapshot => {
+  // if (snapshot.exists()){
+  //   const userData = snapshot.val();
+  //   console.log("userData",userData.password,"pass",password)
+  //   if (userData.password === password) {
+  //     console.log("User "+userData.username+" exists!");
+  //     // return "/library/"+username;
+  //   }
+  //   else {
+  //     alert("Username or password do not match!");
+  //     // return "/";
+  //   }
+  // }
+  // else {
+  //   alert("User does not exist! Please create an account.");
+  //   // return "/createuser";
+  // }
+  // })
+}
 
 export default function Login({setToken}) {
   const [username, setUsername] = useState('');
@@ -19,13 +67,15 @@ export default function Login({setToken}) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = await loginUser({
-      username,
-      password
-    });
+    // const token = await loginUser({
+    //   username,
+    //   password
+    // });
     // console.log(token)
-    setToken(token);
-    history.push("/library/"+username);
+    // setToken(token);
+    // var next = "/library/"+username
+    CheckUserData(username,password,history);
+    // history.push("/library/"+username);
   }
   
   return (

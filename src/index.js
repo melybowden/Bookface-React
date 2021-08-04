@@ -12,6 +12,21 @@ import Login from './Components/login';
 import NotFound from './Components/notfound';
 import Search from './Components/search';
 
+import firebase from "firebase/app";
+import "firebase/database";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBms4IuOMYdZzqyobKqj1g4t68QvjruhNg",
+    authDomain: "bookface-df88d.firebaseapp.com",
+    databaseURL: "https://bookface-df88d-default-rtdb.firebaseio.com",
+    projectId: "bookface-df88d",
+    storageBucket: "bookface-df88d.appspot.com",
+    messagingSenderId: "1068057280002",
+    appId: "1:1068057280002:web:51eba2a9d14805cd06b11b"
+  };
+
+firebase.initializeApp(firebaseConfig);
+
 const routing = (
   <Router>
     <div>
