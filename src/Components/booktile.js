@@ -1,34 +1,55 @@
-import axios from 'axios';
-import React, {useState} from 'react'
+import firebase from 'firebase/app';
+import "firebase/database";
+import React, {useState} from 'react';
+
 
 export default function Booktile(props) {
-    const [shelf, setShelf] = useState('');
-    const [newShelf, setNewShelf] = useState();
+    const [shelf, setShelf] = useState('New Shelf');
+    const [newShelf, setNewShelf] = useState('New Shelf');
     const [isShown, setIsShown] = useState(false);
 
     const handleSubmit = (event) => {
       event.preventDefault();
       var addTo = shelf === "New Shelf" ? newShelf : shelf;
       alert("Added " + props.title + " to " + addTo);
-      const body = {
+
+      // const book = {
+      //   "title": props.title,
+      //   "author": props.author[0],
+      //   "imageURL": props.imgURL,
+      //   "year": props.year,
+      //   "isbn": props.isbn
+      // }
+
+      const shelfData = {
+        "userdisplayname": props.user,
+        "shelf": addTo,
         "title": props.title,
         "author": props.author[0],
         "imageURL": props.imgURL,
         "year": props.year,
-        "isbn": props.isbn,
-        "userdisplayname": props.user,
-        "shelf": props.shelf
+        "isbn": props.isbn
       }
 
-      // axios.defaults.headers.post['Content-Type'] = 'application/json';
-      axios.post("https://cygnus-bookface.herokuapp.com/bookface", body)
+      // Add to books table
+      // firebase.database().ref('books/' + props.isbn).set(book)
+      // .then(function (response) {
+      //   console.log(response);
+      //   alert("Added " + props.title + " to " + addTo);
+      // })
+      // .catch(function (error) {
+      //   console.log("error: "+error);
+      // });
+      // Add a shelf
+      firebase.database().ref('shelves/' + props.user + '/' + addTo + '/' +props.isbn).set(shelfData)
       .then(function (response) {
         console.log(response);
-        alert("Added " + props.title + " to " + addTo);
+        // alert("Added " + props.title + " to " + addTo);
       })
       .catch(function (error) {
         console.log("error: "+error);
       });
+
   }
 
   function cleanShelves(shelves) {
