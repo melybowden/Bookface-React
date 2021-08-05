@@ -5,7 +5,6 @@ import book_not_found from './book_not_found.jpg';
 import Header from './header';
 import firebase from "firebase/app";
 import "firebase/database";
-import { FiMaximize } from 'react-icons/fi';
 
 export default class Search extends Component {
     constructor(props) {
@@ -24,31 +23,12 @@ export default class Search extends Component {
       }
 
       componentDidMount() {
-        
         firebase.database().ref('shelves/'+this.props.match.params.user)
         .on('value', (snapshot) => {
-          // console.log(snapshot)
           if (snapshot.exists()) {
             console.log(Object.keys(snapshot.val()));
             this.setState({shelves: Object.keys(snapshot.val())});
         }})
-        // const shelves = firebase.database().ref('shelves/'+this.props.match.params.user).get()
-        // .then((snapshot) => {
-        //   // console.log(snapshot)
-        //   if (snapshot.exists()) {
-        //     console.log(Object.keys(snapshot.val()));
-        //     this.setState({shelves: Object.keys(snapshot.val())});
-        // }})
-        // .catch((error) => {
-        //   console.error(error);
-        // });
-
-        // console.log("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
-        // axios.get("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
-        // .then(res =>
-        //   // console.log(res.data)
-        //   this.setState({shelves: res.data})
-        //   )
       }
     
       handleChange(event) {
@@ -99,7 +79,7 @@ export default class Search extends Component {
             </div>
             {
               this.state.searchRes.length > 0 && this.state.nRes < 40 ? 
-            <div className="form-box" style={{alignContent:'center',textAlign:'center',marginBottom:'5vh'}}>
+              <div className="form-box" style={{alignContent:'center',textAlign:'center',marginBottom:'5vh'}}>
               <form onSubmit={this.handleSubmit}>
                 <input type="submit" value="Load more results"/>
               </form>

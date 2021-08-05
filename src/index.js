@@ -8,7 +8,6 @@ import './index.css';
 import App from './App';
 import CreateUser from './Components/createuser';
 import Library from './Components/library';
-import Login from './Components/login';
 import NotFound from './Components/notfound';
 import Search from './Components/search';
 import Goals from './Components/goals';
@@ -32,13 +31,10 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        {/* <Route path="/login" component={Login} /> */}
         <Route exact path="/" component={App} />
         <Route path="/search/:user" component={Search} />
         <Route path="/library/:user" component={Library} />
         <Route path="/goals/:user" component={Goals} />
-        {/* <Route path="/search" component={Search} />
-        <Route path="/library" component={Library} /> */}
         <Route path="/createuser" component={CreateUser} />
         {/* check for parameters first! */}
         <Route component={NotFound} />

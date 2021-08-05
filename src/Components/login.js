@@ -6,15 +6,6 @@ import { FiPlus } from 'react-icons/fi';
 import firebase from 'firebase/app';
 import "firebase/database";
 
-async function loginUser(credentials) {
-  console.log("login")
-  return axios.post('https://cygnus-bookface.herokuapp.com/users/login', credentials)
-    .then(res => 
-      // console.log(res)
-      res.data
-    ) // {first: "user created?logged in?failed?", second: {username:"",displayname:"",id:#, loggedIn:bool,password:""}}
- }
-
 function CheckUserData(username, password, history, setToken) {
   const dbRef = firebase.database().ref();
   dbRef.child("users").child(username).get().then((snapshot) => {

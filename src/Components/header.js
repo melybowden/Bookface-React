@@ -13,7 +13,6 @@ export default function Header(props) {
     console.log("sign out")
   }
 
-  // let {user} = useParams();
   let userDN = JSON.parse(sessionStorage.getItem('token')).displayname;
   let user = JSON.parse(sessionStorage.getItem('token')).username;
   console.log(user)
@@ -33,32 +32,3 @@ export default function Header(props) {
     </div>
   )
 }
-
-// export default class Header extends Component {
-//     constructor(props) {
-//       super(props)
-
-//       this.state = {
-//         username: '',
-//         password:''
-//       }
-
-//     }
-
-
-//     render() {
-//         return (
-//             <div className="header">
-//                 <div className="flex-container" style={{padding:'2vh'}}>
-//                   <div className="flex-logo">
-//                   <img src={logo} alt="logo" height={40} width={40} />
-//                   <img src={text_logo} alt="Bookface" height={40}/>
-//                   </div>
-//                   <div activeClassName="active" className="header-link"><NavLink to="/search">Search</NavLink></div>
-//                   <div activeClassName="active" className="header-link"><NavLink to="/library">My Library</NavLink></div>
-//                   <h3 style={{color:'white'}}>Hello, {this.props.user}</h3> 
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
