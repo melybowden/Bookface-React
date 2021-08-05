@@ -16,7 +16,7 @@ export default function Shelf(props) {
       <div className= "shelf">
       <h3 style={{textAlign:'left'}}>{props.shelfName}</h3>
         <div className="scrolling-wrapper-flexbox">
-          {props.booklist.map(book => <div className="card"><Book key={book.title} img={book.imageURL} title={book.title } author= {book.author}/></div>)}
+          {props.booklist.map(book => <div className="card"><Book key={book.title} img={book.imageURL} title={book.title} author= {book.author}/></div>)}
         </div>
       </div>
     )

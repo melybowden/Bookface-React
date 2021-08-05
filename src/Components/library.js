@@ -17,8 +17,8 @@ export default class Library extends Component {
       const dbRef = firebase.database().ref('shelves/'+this.props.match.params.user).get()
       .then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
-          this.setState({booklist: snapshot.val()});
+          console.log("shelves",snapshot.val());
+          this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
       }})
       .catch((error) => {
         console.error(error);
@@ -29,6 +29,7 @@ export default class Library extends Component {
         return (
             <div style={{overflow:'hidden'}}>
               <Header user={this.props.match.params.user}/>
+              {/* {this.state.booklist.map(s => console.log(s))} */}
               <Shelfify books={this.state.booklist} />
             </div>
         )
