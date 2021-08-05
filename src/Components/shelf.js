@@ -18,6 +18,7 @@ export default function Shelf(props) {
         const id = props.isbn;
         
         function ratingChanged(newRating, username, shelf, id) {
+          console.log('shelves/'+username+'/'+shelf+'/'+id)
           firebase.database().ref('shelves/'+username+'/'+shelf+'/'+id).update({rating:newRating})
         } 
 
