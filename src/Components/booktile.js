@@ -42,12 +42,9 @@ export default function Booktile(props) {
   function showShelves() {
     return (
       <form onSubmit={handleSubmit}>
-        <label>
-          Add to shelf:
           <select value={shelf} onChange={e => setShelf(e.target.value)}>
             {cleanShelves(props.shelf).map(s => <option value={s}>{s}</option>)}
           </select>
-        </label>
         {shelf === "New Shelf" ? <input type="text" placeholder="Enter a new shelf name" onChange={e => setNewShelf(e.target.value)}/> : <></>}
         <input type="submit" value="Add to Shelf" />
       </form>

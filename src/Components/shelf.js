@@ -6,11 +6,15 @@ import "firebase/database";
 import { FiMinusCircle } from 'react-icons/fi'
 
 export default function Shelf(props) {
-  const ratingChanged = (newRating) => {
+  // const ratingChanged = (newRating) => {
+  //   console.log(newRating);
+  //   return newRating;
+  //   // firebase.database().ref('shelves/'+props.token.username+'/'+props.shelfName+'/'+props.title).update({rating:newRating})
+  // };
+  function ratingChanged(newRating) {
     console.log(newRating);
-    return newRating;
-    // firebase.database().ref('shelves/'+props.token.username+'/'+props.shelfName+'/'+props.title).update({rating:newRating})
-  };
+    // console.log(props)
+  } 
 
   function coverimage(props){
     return <div className="book-tmb" style={{backgroundColor:"#74ABE2", margin:'2vh', padding:'1vh', height:'13vh'}}>{props.title} by {props.author}</div> 
