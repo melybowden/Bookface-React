@@ -11,11 +11,7 @@ import Library from './Components/library';
 import Login from './Components/login';
 import NotFound from './Components/notfound';
 import Search from './Components/search';
-<<<<<<< HEAD
-import Goals from './Components/goals'
-=======
 import Goals from './Components/goals';
->>>>>>> origin/last-update
 
 import firebase from "firebase/app";
 import "firebase/database";

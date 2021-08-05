@@ -4,12 +4,7 @@ import text_logo from '../text_logo.svg'
 import { NavLink, useHistory, useParams } from 'react-router-dom'
 import { BiSearch, BiUserCircle } from 'react-icons/bi'
 import { ImBooks } from 'react-icons/im'
-<<<<<<< HEAD
-import { GiStairsGoal } from 'react-icons/gi'
-
-=======
 import {GiStairsGoal} from 'react-icons/gi'
->>>>>>> origin/last-update
 
 export default function Header(props) {
   function signOut(history) {
