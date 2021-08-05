@@ -29,7 +29,7 @@ export default function Shelfify(props) {
         shelfList.push({name:s, data:bookList})
       }
     }
-    console.log(shelfList)
+    // console.log(shelfList)
     return shelfList                      // returns list of shelf name: book array (data)
   }
 

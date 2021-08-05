@@ -14,15 +14,23 @@ export default class Library extends Component {
     }
 
     componentDidMount() {
-      const dbRef = firebase.database().ref('shelves/'+this.props.match.params.user).get()
-      .then((snapshot) => {
+      
+      firebase.database().ref('shelves/'+this.props.match.params.user)
+      .on('value', (snapshot) => {
         if (snapshot.exists()) {
-          console.log("shelves",snapshot.val());
+          // console.log("shelves",snapshot.val());
           this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
-      }})
-      .catch((error) => {
-        console.error(error);
-      });
+        }
+      })
+      // const dbRef = firebase.database().ref('shelves/'+this.props.match.params.user).get()
+      // .then((snapshot) => {
+      //   if (snapshot.exists()) {
+      //     console.log("shelves",snapshot.val());
+      //     this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
+      // }})
+      // .catch((error) => {
+      //   console.error(error);
+      // });
   }
 
     render() {

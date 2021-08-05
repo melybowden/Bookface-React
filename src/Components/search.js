@@ -22,16 +22,25 @@ export default class Search extends Component {
       }
 
       componentDidMount() {
-        const shelves = firebase.database().ref('shelves/'+this.props.match.params.user).get()
-        .then((snapshot) => {
+        
+        firebase.database().ref('shelves/'+this.props.match.params.user)
+        .on('value', (snapshot) => {
           // console.log(snapshot)
           if (snapshot.exists()) {
             console.log(Object.keys(snapshot.val()));
             this.setState({shelves: Object.keys(snapshot.val())});
         }})
-        .catch((error) => {
-          console.error(error);
-        });
+        // const shelves = firebase.database().ref('shelves/'+this.props.match.params.user).get()
+        // .then((snapshot) => {
+        //   // console.log(snapshot)
+        //   if (snapshot.exists()) {
+        //     console.log(Object.keys(snapshot.val()));
+        //     this.setState({shelves: Object.keys(snapshot.val())});
+        // }})
+        // .catch((error) => {
+        //   console.error(error);
+        // });
+
         // console.log("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
         // axios.get("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
         // .then(res =>
