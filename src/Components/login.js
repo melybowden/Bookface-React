@@ -41,7 +41,7 @@ export default function Login({setToken}) {
             <input type="submit" value="Submit" />
           </form>
           <div style={{marginTop: "30%"}}>
-            <Link to="/createuser" >New User? Create Account Here</Link>
+            <Link to="/createuser" style={{color:"red"}}>New User? Create Account Here</Link>
           </div>
         </div>
       </div>
