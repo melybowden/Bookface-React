@@ -25,11 +25,12 @@ export default function Shelfify(props) {
         // shelfList.push({name:s, data:shelves[]})
         bookList.push(shelves[s][b]);
       }
-      if (bookList.length > 0) {        // Hide empty shelves
-        shelfList.push({name:s, data:bookList})
-      }
+      // if (bookList.length > 0) {        // Hide empty shelves
+      //   shelfList.push({name:s, data:bookList})
+      // }
+      shelfList.push({name:s, data:bookList})
     }
-    // console.log(shelfList)
+    console.log(shelfList)
     return shelfList                      // returns list of shelf name: book array (data)
   }
 

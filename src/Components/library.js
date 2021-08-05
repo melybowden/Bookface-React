@@ -14,12 +14,15 @@ export default class Library extends Component {
     }
 
     componentDidMount() {
-      
       firebase.database().ref('shelves/'+this.props.match.params.user)
       .on('value', (snapshot) => {
         if (snapshot.exists()) {
           // console.log("shelves",snapshot.val());
           this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
+        }
+        else {
+          console.log("snapshot does not exist");
+          this.setState({booklist:[]})
         }
       })
       // const dbRef = firebase.database().ref('shelves/'+this.props.match.params.user).get()
@@ -31,6 +34,18 @@ export default class Library extends Component {
       // .catch((error) => {
       //   console.error(error);
       // });
+  }
+
+  componentWillUnmount() {
+    firebase.database().ref('shelves/'+this.props.match.params.user)
+    .on('value', (snapshot) => {
+      if (snapshot.exists()) {
+        this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
+      }
+      else {
+        this.setState({booklist:[]})
+      }
+    })
   }
 
     render() {

@@ -7,56 +7,31 @@ import { FiMinusCircle } from 'react-icons/fi';
 import { MdEdit } from 'react-icons/md';
 
 export default function Shelf(props) {
-  // const ratingChanged = (newRating) => {
-  //   console.log(newRating);
-  //   return newRating;
-  //   // firebase.database().ref('shelves/'+props.token.username+'/'+props.shelfName+'/'+props.title).update({rating:newRating})
-  // };
-  function ratingChanged(newRating) {
-    console.log(newRating);
-    // console.log(props)
-  } 
+      function ratingChanged(newRating) {
+        console.log(newRating);
+      } 
 
-  function coverimage(props){
-    return <div className="book-tmb" style={{backgroundColor:"#74ABE2", margin:'2vh', padding:'1vh', height:'13vh'}}>{props.title} by {props.author}</div> 
-  }
-  
-  function Book(props) {
-    const [show, setShow] = useState();
-    // console.log("props",props);
-    return (
-      <div className="book" onMouseEnter={e => setShow(true)} onMouseLeave={e => setShow(false)}>
-        {show ? <h2 style={{textAlign:'right',padding:0,margin:0}}><FiMinusCircle onClick={() => remove(props.token.username,props.shelfName,props.isbn)}/></h2> : <></>}
-        {props.img !== book_not_found ? <img src={props.img} alt="book cover" className="book-tmb"></img>:coverimage(props)}
-        <b>{props.title}</b>
-        <ReactStars
-          props={props}
-          count={5}
-          onChange={ratingChanged}
-          size={24}
-          activeColor="#ffd700"
-        />
-      </div>
-      )
-  };
-  {/* {firebase.database().ref('shelves/'+props.token.username+'/'+props.shelfName+'/'+props.title).update({rating:ratingChanged})} */}
-
-
-  // const Book = (props) =>
-  //     {const [show, setShow] = useState();}
-  //     <div className="book" onMouseEnter={e => setShow(true)} onMouseLeave={e => setShow(false)}>
-  //      {show ? <h2 style={{textAlign:'right',padding:0,margin:0}}><FiMinusCircle onClick={remove(token.username,props.shelfName,book.isbn)}/></h2> : <></>}
-  //      {props.img !== book_not_found ? <img src={props.img} alt="book cover" className="book-tmb"></img>:coverimage(props)}
-  //      <b>{props.title}</b>
-  //      <ReactStars
-  //       props={props}
-  //       count={5}
-  //       onChange={ratingChanged}
-  //       size={24}
-  //       activeColor="#ffd700"
-  //     />
-  //     {/* {firebase.database().ref('shelves/'+props.token.username+'/'+props.shelfName+'/'+props.title).update({rating:ratingChanged})} */}
-  //     </div>
+      function coverimage(props){
+        return <div className="book-tmb" style={{backgroundColor:"#74ABE2", margin:'2vh', padding:'1vh', height:'13vh'}}>{props.title} by {props.author}</div> 
+      }
+      
+      function Book(props) {
+        const [show, setShow] = useState();
+        return (
+          <div className="book" onMouseEnter={e => setShow(true)} onMouseLeave={e => setShow(false)}>
+            {show ? <h2 style={{textAlign:'right',padding:0,margin:0}}><FiMinusCircle onClick={() => remove(props.token.username,props.shelfName,props.isbn)}/></h2> : <></>}
+            {props.img !== book_not_found ? <img src={props.img} alt="book cover" className="book-tmb"></img>:coverimage(props)}
+            <b>{props.title}</b>
+            <ReactStars
+              props={props}
+              count={5}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
+            />
+          </div>
+          )
+      };
     
     function remove(username, shelf, id) {
       console.log(username,shelf,id)
@@ -64,8 +39,6 @@ export default function Shelf(props) {
       .then(() => console.log("removed"))
       .catch((error) => console.log("error", error))
     }
-    const [edit, setEdit] = useState();
-    const [newName, setName] = useState('');
 
     function renameShelf(oldName, newName, username) {
       firebase.database().ref('shelves/'+username+'/'+oldName).get()
@@ -78,6 +51,9 @@ export default function Shelf(props) {
     }
 
     let token = JSON.parse(sessionStorage.getItem("token"));
+    const [edit, setEdit] = useState();
+    const [newName, setName] = useState('');
+    
     return (
       <div className="shelf" >
       <h3 style={{textAlign:'left',display:'flex',flexFlow:'row'}} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)}>{props.shelfName}  
