@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import logo from '../login_logo.svg';
+import { FiPlus } from 'react-icons/fi'
 
 async function loginUser(credentials) {
   console.log("login")
@@ -41,7 +42,7 @@ export default function Login({setToken}) {
             <input type="submit" value="Submit" />
           </form>
           <div style={{marginTop: "30%"}}>
-            <Link to="/createuser" style={{color:"red"}}>New User? Create Account Here</Link>
+            <Link to="/createuser" style={{color:"red"}}><FiPlus />  New User? Create Account Here</Link>
           </div>
         </div>
       </div>
