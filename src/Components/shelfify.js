@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Shelf from './shelf';
 
 export default function Shelfify(props) {
@@ -12,7 +12,7 @@ export default function Shelfify(props) {
       }
       shelfList.push({name:s, data:bookList})
     }
-    console.log(shelfList)
+    // console.log(shelfList)
     return shelfList                      // returns list of shelf name: book array (data)
   }
 

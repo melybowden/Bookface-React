@@ -19,7 +19,8 @@ export default function Booktile(props) {
         "author": props.author ? props.author[0] : "Author Unknown",
         "imageURL": props.imgURL,
         "year": props.year ? props.year : "Year Unknown",
-        "isbn": props.isbn ? props.isbn : "ISBN Unknown"
+        "isbn": props.isbn ? props.isbn : "ISBN Unknown",
+        "rating": 0
       }
       firebase.database().ref('shelves/' + props.user + '/' + addTo + '/' +props.isbn).set(shelfData)
       .then(function (response) {

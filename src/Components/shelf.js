@@ -7,27 +7,31 @@ import { FiMinusCircle } from 'react-icons/fi';
 import { MdEdit } from 'react-icons/md';
 
 export default function Shelf(props) {
-      function ratingChanged(newRating) {
-        console.log(newRating);
-      } 
-
       function coverimage(props){
         return <div className="book-tmb" style={{backgroundColor:"#74ABE2", margin:'2vh', padding:'1vh', height:'13vh'}}>{props.title} by {props.author}</div> 
       }
       
       function Book(props) {
         const [show, setShow] = useState();
+        const username = props.token.username;
+        const shelf = props.shelfName;
+        const id = props.isbn;
+        
+        function ratingChanged(newRating, username, shelf, id) {
+          firebase.database().ref('shelves/'+username+'/'+shelf+'/'+id).update({rating:newRating})
+        } 
+
         return (
           <div className="book" onMouseEnter={e => setShow(true)} onMouseLeave={e => setShow(false)}>
             {show ? <h2 style={{textAlign:'right',padding:0,margin:0}}><FiMinusCircle onClick={() => remove(props.token.username,props.shelfName,props.isbn)}/></h2> : <></>}
             {props.img !== book_not_found ? <img src={props.img} alt="book cover" className="book-tmb"></img>:coverimage(props)}
             <b>{props.title}</b>
             <ReactStars
-              props={props}
               count={5}
-              onChange={ratingChanged}
+              onChange={e => ratingChanged(e, username, shelf, id)}
               size={24}
               activeColor="#ffd700"
+              value={props.rating}
             />
           </div>
           )
@@ -69,7 +73,7 @@ export default function Shelf(props) {
           props.booklist.map(book => 
             <div className="card" key={book.title} >
               
-            <Book key={book.title} img={book.imageURL} title={book.title} author={book.author} token={token} shelfName={props.shelfName} isbn={book.isbn}/>
+            <Book key={book.title} img={book.imageURL} title={book.title} author={book.author} token={token} shelfName={props.shelfName} isbn={book.isbn} rating={book.rating?book.rating:0}/>
             </div>)
           }
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../logo_white.svg'
 import text_logo from '../text_logo.svg'
-import { NavLink, useHistory, useParams } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { BiSearch, BiUserCircle } from 'react-icons/bi'
 import { ImBooks } from 'react-icons/im'
 import {GiStairsGoal} from 'react-icons/gi'
@@ -15,7 +15,7 @@ export default function Header(props) {
 
   let userDN = JSON.parse(sessionStorage.getItem('token')).displayname;
   let user = JSON.parse(sessionStorage.getItem('token')).username;
-  console.log(user)
+  // console.log(user)
   let history = useHistory();
   return (
     <div className="header">

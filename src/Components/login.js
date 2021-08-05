@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import logo from '../login_logo.svg';
 import { FiPlus } from 'react-icons/fi';
@@ -10,7 +9,7 @@ function CheckUserData(username, password, history, setToken) {
   const dbRef = firebase.database().ref();
   dbRef.child("users").child(username).get().then((snapshot) => {
     if (snapshot.exists()) {
-      console.log(snapshot.val());
+      // console.log(snapshot.val());
       if (snapshot.val().password === password) {
         console.log("User logged in!");
         setToken(snapshot.val());
