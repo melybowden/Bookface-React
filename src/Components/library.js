@@ -14,12 +14,9 @@ export default class Library extends Component {
     }
 
     componentDidMount() {
-      // const dbRef = firebase.database().ref();
-      // dbRef.child("books").child(username).get()
-      console.log("mounted");
       const dbRef = firebase.database().ref('shelves/'+this.props.match.params.user).get()
       .then((snapshot) => {
-        console.log(snapshot)
+        // console.log(snapshot)
         if (snapshot.exists()) {
           console.log(snapshot.val());
           // this.setState({booklist: res.data})

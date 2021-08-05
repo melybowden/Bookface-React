@@ -4,13 +4,14 @@ import logo from '../login_logo.svg';
 import firebase from 'firebase/app';
 import "firebase/database";
 
-function CheckUserData(username, password, history) {
+function CheckUserData(username, password, history, setToken) {
   const dbRef = firebase.database().ref();
   dbRef.child("users").child(username).get().then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
       if (snapshot.val().password === password) {
         console.log("User logged in!");
+        setToken(snapshot.val());
         history.push('/library/'+snapshot.val().displayname);
       }
       else {
@@ -33,7 +34,7 @@ export default function Login({setToken}) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    CheckUserData(username,password,history);
+    CheckUserData(username,password,history,setToken);
   }
   
   return (

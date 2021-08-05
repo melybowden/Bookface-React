@@ -31,12 +31,12 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route path="/login" component={Login} />
+        {/* <Route path="/login" component={Login} /> */}
         <Route exact path="/" component={App} />
         <Route path="/search/:user" component={Search} />
         <Route path="/library/:user" component={Library} />
-        <Route path="/search" component={Search} />
-        <Route path="/library" component={Library} />
+        {/* <Route path="/search" component={Search} />
+        <Route path="/library" component={Library} /> */}
         <Route path="/createuser" component={CreateUser} />
         {/* check for parameters first! */}
         <Route component={NotFound} />

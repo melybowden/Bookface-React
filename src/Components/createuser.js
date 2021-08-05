@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import logotype from '../welcome_logo.svg';
-import useToken from './useToken'
 import { useHistory } from 'react-router-dom';
 import firebase from "firebase/app";
 import "firebase/database";
@@ -17,14 +16,12 @@ export default function CreateUser() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [displayname, setDisplayname] = useState('');
-  const {token, setToken} = useToken();
   let history = useHistory();
 
   const handleSubmit = async e => {
     e.preventDefault();
     writeUserData(username, displayname, password);
 
-    // setToken(token);
     history.push("/");
   }
 
