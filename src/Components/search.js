@@ -5,6 +5,7 @@ import book_not_found from './book_not_found.jpg';
 import Header from './header';
 import firebase from "firebase/app";
 import "firebase/database";
+import { FiMaximize } from 'react-icons/fi';
 
 export default class Search extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ export default class Search extends Component {
         this.state = {
           keyword: '',
           searchRes: [],
-          shelves:[]
+          shelves:[],
+          nRes:10
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -55,9 +57,9 @@ export default class Search extends Component {
     
       handleSubmit(event) {
         event.preventDefault();
-        axios.get("https://www.googleapis.com/books/v1/volumes?q="+this.state.keyword)
+        axios.get("https://www.googleapis.com/books/v1/volumes?q="+this.state.keyword+'&maxResults='+this.state.nRes)
         .then(res => 
-          this.setState({searchRes: res.data.items})
+          this.setState({searchRes: res.data.items, nRes: Math.min(this.state.nRes+10,40)})
           // TODO: more error checking for when properties don't exist in Google API results
           // year: publishedDate YYYY-MM-DD
           // ISBN: industryIdentifiers[1].identifier ([0] is ISBN 10 not ISBN 13)
@@ -85,15 +87,25 @@ export default class Search extends Component {
             </div>
             <div className="book-search">
             {this.state.searchRes.map(book => 
-              <Booktile key={this.getIdentifier(book.volumeInfo.industryIdentifiers)} 
-              title={book.volumeInfo.title} 
-              author={book.volumeInfo.authors} 
-              year={book.volumeInfo.publishedDate.substring(0,4)} 
-              isbn={this.getIdentifier(book.volumeInfo.industryIdentifiers)}
+              <Booktile 
+              key={book.volumeInfo.industryIdentifiers !== undefined ? this.getIdentifier(book.volumeInfo.industryIdentifiers) : "Unknown"} 
+              title={book.volumeInfo.title !== undefined ? book.volumeInfo.title : "Title Unknown"} 
+              author={book.volumeInfo.authors !== undefined ? book.volumeInfo.authors : ["Author Unknown"]} 
+              year={book.volumeInfo.publishedDate !== undefined ? book.volumeInfo.publishedDate.substring(0,4) : "Year Unknown"} 
+              isbn={book.volumeInfo.industryIdentifiers !== undefined ? this.getIdentifier(book.volumeInfo.industryIdentifiers) : "Unknown"}
               imgURL={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : book_not_found}
               shelf={this.state.shelves}
               user={this.props.match.params.user}/>)}
             </div>
+            {
+              this.state.searchRes.length > 0 && this.state.nRes < 40 ? 
+            <div className="form-box" style={{alignContent:'center',textAlign:'center',marginBottom:'5vh'}}>
+              <form onSubmit={this.handleSubmit}>
+                <input type="submit" value="Load more results"/>
+              </form>
+            </div> :
+            <></>
+            }
           </div>
         );
       }
