@@ -23,7 +23,7 @@ function CheckUserData(username, password, history, setToken) {
       if (snapshot.val().password === password) {
         console.log("User logged in!");
         setToken(snapshot.val());
-        history.push('/library/'+snapshot.val().displayname);
+        history.push('/library/'+snapshot.val().username);
       }
       else {
         console.log("Username or password do not match.");

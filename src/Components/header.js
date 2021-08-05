@@ -13,7 +13,10 @@ export default function Header(props) {
     console.log("sign out")
   }
 
-  let {user} = useParams();
+  // let {user} = useParams();
+  let userDN = JSON.parse(sessionStorage.getItem('token')).displayname;
+  let user = JSON.parse(sessionStorage.getItem('token')).username;
+  console.log(user)
   let history = useHistory();
   return (
     <div className="header">
@@ -25,7 +28,7 @@ export default function Header(props) {
           <h3 className="header-link"><NavLink to={"/search/"+user} activeClassName="active"><BiSearch />  Search</NavLink></h3>
           <h3 className="header-link"><NavLink to={"/library/"+user} activeClassName="active"><ImBooks />  My Library</NavLink></h3>
           <h3 className="header-link"><NavLink to={"/goals/"+user} activeClassName="active"><GiStairsGoal />  My Goals</NavLink></h3>
-          <h3 style={{color:'white'}} onClick={() => signOut(history)}><BiUserCircle />  Hello, {props.user}</h3> 
+          <h3 style={{color:'white'}} onClick={() => signOut(history)}><BiUserCircle />  Hello, {userDN}</h3> 
         </div>
     </div>
   )
