@@ -3,7 +3,8 @@ import book_not_found from './book_not_found.jpg'
 import ReactStars from "react-rating-stars-component";
 import firebase from 'firebase/app';
 import "firebase/database";
-import { FiMinusCircle } from 'react-icons/fi'
+import { FiMinusCircle } from 'react-icons/fi';
+import { MdEdit } from 'react-icons/md';
 
 export default function Shelf(props) {
   // const ratingChanged = (newRating) => {
@@ -63,11 +64,30 @@ export default function Shelf(props) {
       .then(() => console.log("removed"))
       .catch((error) => console.log("error", error))
     }
+    const [edit, setEdit] = useState();
+    const [newName, setName] = useState('');
+
+    function renameShelf(oldName, newName, username) {
+      firebase.database().ref('shelves/'+username+'/'+oldName).get()
+      .then((snapshot) => {
+        console.log(snapshot.val())
+        firebase.database().ref('shelves/'+username+'/'+oldName).remove()
+        firebase.database().ref('shelves/'+username+'/'+newName).set(snapshot.val())
+      })
+      .catch((error) => console.log(error))
+    }
 
     let token = JSON.parse(sessionStorage.getItem("token"));
     return (
-      <div className= "shelf">
-      <h3 style={{textAlign:'left'}}>{props.shelfName}</h3>
+      <div className="shelf" >
+      <h3 style={{textAlign:'left',display:'flex',flexFlow:'row'}} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)}>{props.shelfName}  
+      {edit ? 
+        <form className="form-box" style={{marginLeft:'1vw'}} onSubmit={() => renameShelf(props.shelfName,newName,token.username)}> 
+          <input type="text" value={newName} placeholder="Rename bookshelf" onChange={e => setName(e.target.value)}/>
+          <MdEdit style={{marginLeft:'1vw'}} onClick={() => renameShelf(props.shelfName,newName,token.username)}/> 
+        </form> 
+        : <></>
+      }</h3>
         <div className="scrolling-wrapper-flexbox">
           {
           props.booklist.map(book => 

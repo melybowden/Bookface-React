@@ -15,11 +15,11 @@ export default function Booktile(props) {
       const shelfData = {
         "userdisplayname": props.user,
         "shelf": addTo,
-        "title": props.title,
-        "author": props.author[0],
+        "title": props.title ? props.title : "Title Unknown",
+        "author": props.author ? props.author[0] : "Author Unknown",
         "imageURL": props.imgURL,
-        "year": props.year,
-        "isbn": props.isbn
+        "year": props.year ? props.year : "Year Unknown",
+        "isbn": props.isbn ? props.isbn : "ISBN Unknown"
       }
       firebase.database().ref('shelves/' + props.user + '/' + addTo + '/' +props.isbn).set(shelfData)
       .then(function (response) {
