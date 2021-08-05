@@ -11,6 +11,7 @@ import Library from './Components/library';
 import Login from './Components/login';
 import NotFound from './Components/notfound';
 import Search from './Components/search';
+import Goals from './Components/goals'
 
 import firebase from "firebase/app";
 import "firebase/database";
@@ -35,11 +36,13 @@ const routing = (
         <Route exact path="/" component={App} />
         <Route path="/search/:user" component={Search} />
         <Route path="/library/:user" component={Library} />
+        <Route path="/goals/:user" component={Goals} />
         {/* <Route path="/search" component={Search} />
         <Route path="/library" component={Library} /> */}
         <Route path="/createuser" component={CreateUser} />
         {/* check for parameters first! */}
         <Route component={NotFound} />
+        
       </Switch>
     </div>
   </Router> 
