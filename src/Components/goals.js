@@ -32,11 +32,15 @@ export default class Goals extends Component {
     //     }})
     // }
     componentDidMount() {
-      
         firebase.database().ref('goals/'+this.props.match.params.user)
         .on('value', (promise) => {
           if (promise.exists()) {
-            this.setState({goallist: promise.val()});
+            var res = promise.val()
+            var goals = []
+            for (var g in res) {
+              goals.push({key:g, text:res[g].goal, status:res[g].status})
+            }
+            this.setState({goals: goals});
           }
         })
     }
@@ -60,10 +64,11 @@ export default class Goals extends Component {
         console.log(this.state.goals);
            
         e.preventDefault();
-
-        // firebase.database().ref('goals/' + this.props.match.params.user).set({
-        //     goal:newGoal.text
-        //   });
+        var n = this.state.goals.length;
+        firebase.database().ref('goals/' + this.props.match.params.user + '/' + newGoal.key).set({
+            goal: newGoal.text,
+            status: 'new'
+          });
       }
 
     render() {
@@ -72,13 +77,12 @@ export default class Goals extends Component {
               <Header user={this.props.match.params.user}/>
               {/* {this.state.booklist.map(s => console.log(s))} */}
               <div id="goallist">
-                    <form onSubmit={this.addGoal}>
+                    <form onSubmit={this.addGoal} className="form-box">
                     
                         <input ref={(a) => this._inputElement = a} 
-                            placeholder="Enter a new reading goal">
-                        </input>
+                            placeholder="Enter a new reading goal" />
                         
-                        <button type="submit">add</button>
+                        <input type="submit" value="Add" />
                     </form>
                     <div >
                         <GoalItems entries={this.state.goals}/>
