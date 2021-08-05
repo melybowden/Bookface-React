@@ -60,8 +60,8 @@ export default function Login({setToken}) {
             <br />
             <input type="submit" value="Submit" />
           </form>
-          <div style={{marginTop: "30%"}}>
-            <Link to="/createuser" style={{color:"red"}}><FiPlus />  New User? Create Account Here</Link>
+          <div style={{marginTop: "20%"}}>
+            <Link to="/createuser" style={{color:"navy"}}>New User? Create Account Here <FiPlus /></Link>
           </div>
         </div>
       </div>

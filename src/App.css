@@ -96,8 +96,8 @@ a:link, a:active, a:visited {
   display: flex;
   justify-content: center;
   max-width: 100vw;
-  height: 30px;
   padding-top: 20px;
+  align-items: baseline;
 }
 
 .book-search {
@@ -107,6 +107,40 @@ a:link, a:active, a:visited {
   align-items: top;
   vertical-align: middle;
   /* max-width; */
+}
+
+input[type=text] {
+  padding:5px; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input[type=text]:focus {
+  border-color:#333;
+}
+
+input[type=password] {
+  padding:5px; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input[type=password]:focus {
+  border-color:#333;
+}
+
+input[type=submit] {
+  padding:5px 15px; 
+  background:#ccc; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  margin-left: 5px;
 }
 
 .book-tile {
@@ -123,7 +157,7 @@ a:link, a:active, a:visited {
 .book-list {
   display: flex;
   flex-flow: column;
-  /* padding: 2vw; */
+  padding-bottom: 2vw;
   text-align: center;
   width: 15vw;
   margin: 5vh;

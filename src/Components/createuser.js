@@ -21,6 +21,7 @@ export default function CreateUser() {
   const handleSubmit = async e => {
     e.preventDefault();
     writeUserData(username, displayname, password);
+    alert('Welcome ' + displayname + "!");
 
     history.push("/");
   }
