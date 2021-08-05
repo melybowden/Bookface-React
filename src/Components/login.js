@@ -1,8 +1,19 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import { Link, useHistory } from 'react-router-dom';
 import logo from '../login_logo.svg';
+import { FiPlus } from 'react-icons/fi';
 import firebase from 'firebase/app';
 import "firebase/database";
+
+async function loginUser(credentials) {
+  console.log("login")
+  return axios.post('https://cygnus-bookface.herokuapp.com/users/login', credentials)
+    .then(res => 
+      // console.log(res)
+      res.data
+    ) // {first: "user created?logged in?failed?", second: {username:"",displayname:"",id:#, loggedIn:bool,password:""}}
+ }
 
 function CheckUserData(username, password, history, setToken) {
   const dbRef = firebase.database().ref();
@@ -50,7 +61,7 @@ export default function Login({setToken}) {
             <input type="submit" value="Submit" />
           </form>
           <div style={{marginTop: "30%"}}>
-            <Link to="/createuser" style={{color:"red"}}>New User? Create Account Here</Link>
+            <Link to="/createuser" style={{color:"red"}}><FiPlus />  New User? Create Account Here</Link>
           </div>
         </div>
       </div>
