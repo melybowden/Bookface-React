@@ -77,14 +77,14 @@ export default class Goals extends Component {
               <Header user={this.props.match.params.user}/>
               {/* {this.state.booklist.map(s => console.log(s))} */}
               <div id="goallist">
-                    <form onSubmit={this.addGoal} className="form-box">
+                    <form onSubmit={this.addGoal} className="search-container">
                     
-                        <input ref={(a) => this._inputElement = a} 
+                        <input type="text" ref={(a) => this._inputElement = a} 
                             placeholder="Enter a new reading goal" />
                         
                         <input type="submit" value="Add" />
                     </form>
-                    <div >
+                    <div className="goal-container">
                         <GoalItems entries={this.state.goals}/>
                     </div>
                 </div>
