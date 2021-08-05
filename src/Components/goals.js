@@ -7,39 +7,38 @@ import GoalItems from "./GoalItems";
 
 export default class Goals extends Component {
     
-    // constructor(props){
-    //     super(props)
-    //     this.state = {
-    //       goallist: []
-    //     }
-    //     this.componentDidMount = this.componentDidMount.bind(this);
-    // }
-
-    // componentDidMount() {
-      
-    //   firebase.database().ref('shelves/'+this.props.match.params.user)
-    //   .on('value', (snapshot) => {
-    //     if (snapshot.exists()) {
-    //       // console.log("shelves",snapshot.val());
-    //       this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
-    //     }
-    //   })
-      // const dbRef = firebase.database().ref('shelves/'+this.props.match.params.user).get()
-      // .then((snapshot) => {
-      //   if (snapshot.exists()) {
-      //     console.log("shelves",snapshot.val());
-      //     this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
-      // }})
-      // .catch((error) => {
-      //   console.error(error);
-      // });
-//   }
     constructor(props) {
         super(props);
         this.state = {
             goals: []
           };
         this.addGoal = this.addGoal.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+
+    }
+
+    // componentDidMount(){
+    //     firebase.database().ref('goals/' + this.props.match.params.user).on()
+    //         .then('value',(promise) => {this.setState({goalList:promise.val()})})
+    //     }
+    // componentDidMount() {
+        
+    //     firebase.database().ref('shelves/'+this.props.match.params.user)
+    //     .on('value', (snapshot) => {
+    //       // console.log(snapshot)
+    //       if (snapshot.exists()) {
+    //         console.log(Object.keys(snapshot.val()));
+    //         this.setState({shelves: Object.keys(snapshot.val())});
+    //     }})
+    // }
+    componentDidMount() {
+      
+        firebase.database().ref('goals/'+this.props.match.params.user)
+        .on('value', (promise) => {
+          if (promise.exists()) {
+            this.setState({goallist: promise.val()});
+          }
+        })
     }
 
     addGoal(e) {
@@ -61,6 +60,10 @@ export default class Goals extends Component {
         console.log(this.state.goals);
            
         e.preventDefault();
+
+        // firebase.database().ref('goals/' + this.props.match.params.user).set({
+        //     goal:newGoal.text
+        //   });
       }
 
     render() {
