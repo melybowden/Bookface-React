@@ -58,10 +58,12 @@ export default class Search extends Component {
         return (
           <div style={{overflow:'hidden'}}>
             <Header user={this.props.match.params.user}/>
-            <form onSubmit={this.handleSubmit} >
-              <input type="text" name="keyword" value={this.state.keyword} placeholder="Search for a book..." onChange={this.handleChange} />
-              <input type="submit" value="Search!" />
-            </form>
+            <div className="form-box">
+              <form onSubmit={this.handleSubmit} className="search-container" >
+              <input type="text" className="search-keyword" name="keyword" value={this.state.keyword} placeholder="Search for a book..." onChange={this.handleChange} />
+              <input type="submit" value="Search" />
+              </form>
+            </div>
             <div className="book-search">
             {this.state.searchRes.map(book => 
               <Booktile key={this.getIdentifier(book.volumeInfo.industryIdentifiers)} 
