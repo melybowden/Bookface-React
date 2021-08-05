@@ -4,6 +4,7 @@ import text_logo from '../text_logo.svg'
 import { NavLink, useHistory, useParams } from 'react-router-dom'
 import { BiSearch, BiUserCircle } from 'react-icons/bi'
 import { ImBooks } from 'react-icons/im'
+import {GiStairsGoal} from 'react-icons/gi'
 
 export default function Header(props) {
   function signOut(history) {
@@ -23,6 +24,7 @@ export default function Header(props) {
           </div>
           <h3 className="header-link"><NavLink to={"/search/"+user} activeClassName="active"><BiSearch />  Search</NavLink></h3>
           <h3 className="header-link"><NavLink to={"/library/"+user} activeClassName="active"><ImBooks />  My Library</NavLink></h3>
+          <h3 className="header-link"><NavLink to={"/goals/"+user} activeClassName="active"><GiStairsGoal />  My Goals</NavLink></h3>
           <h3 style={{color:'white'}} onClick={() => signOut(history)}><BiUserCircle />  Hello, {props.user}</h3> 
         </div>
     </div>
