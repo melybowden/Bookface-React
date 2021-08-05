@@ -1,29 +1,28 @@
-import axios from 'axios';
-import React, {useState} from 'react'
+import firebase from 'firebase/app';
+import "firebase/database";
+import React, {useState} from 'react';
+
 
 export default function Booktile(props) {
-    const [shelf, setShelf] = useState('');
-    const [newShelf, setNewShelf] = useState();
+    const [shelf, setShelf] = useState('New Shelf');
+    const [newShelf, setNewShelf] = useState('');
     const [isShown, setIsShown] = useState(false);
 
     const handleSubmit = (event) => {
       event.preventDefault();
       var addTo = shelf === "New Shelf" ? newShelf : shelf;
-      alert("Added " + props.title + " to " + addTo);
-      const body = {
+
+      const shelfData = {
+        "userdisplayname": props.user,
+        "shelf": addTo,
         "title": props.title,
         "author": props.author[0],
         "imageURL": props.imgURL,
         "year": props.year,
-        "isbn": props.isbn,
-        "userdisplayname": props.user,
-        "shelf": props.shelf
+        "isbn": props.isbn
       }
-
-      // axios.defaults.headers.post['Content-Type'] = 'application/json';
-      axios.post("https://cygnus-bookface.herokuapp.com/bookface", body)
+      firebase.database().ref('shelves/' + props.user + '/' + addTo + '/' +props.isbn).set(shelfData)
       .then(function (response) {
-        console.log(response);
         alert("Added " + props.title + " to " + addTo);
       })
       .catch(function (error) {
@@ -34,9 +33,7 @@ export default function Booktile(props) {
   function cleanShelves(shelves) {
     var clean = []
     for (var b in shelves) {
-      if (shelves[b].shelf !== undefined && !(clean.includes(shelves[b].shelf))) {
-        clean.push(shelves[b].shelf)
-      }
+      clean.push(shelves[b]);
     }
     clean.push("New Shelf")
     return clean
@@ -48,7 +45,6 @@ export default function Booktile(props) {
         <label>
           Add to shelf:
           <select value={shelf} onChange={e => setShelf(e.target.value)}>
-            {/* {props.shelf.map(b => <option value={b.shelf}>{b.shelf}</option>)} */}
             {cleanShelves(props.shelf).map(s => <option value={s}>{s}</option>)}
           </select>
         </label>

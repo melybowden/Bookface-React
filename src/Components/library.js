@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Header from './header';
-import axios from 'axios';
 import Shelfify from './shelfify';
-// import Shelf from './shelf';
+import firebase from 'firebase/app';
+import "firebase/database";
+
 export default class Library extends Component {
     constructor(props){
         super(props)
@@ -13,23 +14,22 @@ export default class Library extends Component {
     }
 
     componentDidMount() {
-      // console.log("mounted")
-      // console.log("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
-      axios.get("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
-      .then(res =>
-        this.setState({booklist: res.data})
-      );
-    }
+      const dbRef = firebase.database().ref('shelves/'+this.props.match.params.user).get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+          this.setState({booklist: snapshot.val()});
+      }})
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
     render() {
         return (
             <div style={{overflow:'hidden'}}>
               <Header user={this.props.match.params.user}/>
               <Shelfify books={this.state.booklist} />
-              {/* {console.log(this.state.booklist)} */}
-              {/* {this.getShelves(this.state.booklist).map(s => console.log(s))} */}
-              {/* <Shelf shelfName="Book Club" booklist={this.state.booklist} />
-              <Shelf shelfName="Summer Reading List" booklist={this.state.booklist} /> */}
             </div>
         )
     }

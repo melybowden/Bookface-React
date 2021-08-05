@@ -3,6 +3,8 @@ import axios from 'axios'
 import Booktile from './booktile';
 import book_not_found from './book_not_found.jpg';
 import Header from './header';
+import firebase from "firebase/app";
+import "firebase/database";
 
 export default class Search extends Component {
     constructor(props) {
@@ -20,12 +22,22 @@ export default class Search extends Component {
       }
 
       componentDidMount() {
+        const shelves = firebase.database().ref('shelves/'+this.props.match.params.user).get()
+        .then((snapshot) => {
+          // console.log(snapshot)
+          if (snapshot.exists()) {
+            console.log(Object.keys(snapshot.val()));
+            this.setState({shelves: Object.keys(snapshot.val())});
+        }})
+        .catch((error) => {
+          console.error(error);
+        });
         // console.log("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
-        axios.get("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
-        .then(res =>
-          // console.log(res.data)
-          this.setState({shelves: res.data})
-          )
+        // axios.get("https://cygnus-bookface.herokuapp.com/bookface/user/"+this.props.match.params.user)
+        // .then(res =>
+        //   // console.log(res.data)
+        //   this.setState({shelves: res.data})
+        //   )
       }
     
       handleChange(event) {
@@ -36,7 +48,6 @@ export default class Search extends Component {
         event.preventDefault();
         axios.get("https://www.googleapis.com/books/v1/volumes?q="+this.state.keyword)
         .then(res => 
-          // console.log(res.data.items),
           this.setState({searchRes: res.data.items})
           // TODO: more error checking for when properties don't exist in Google API results
           // year: publishedDate YYYY-MM-DD
