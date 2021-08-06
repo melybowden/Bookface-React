@@ -61,14 +61,14 @@ export default function Shelf(props) {
     
     return (
       <div className="shelf" >
-      <h3 style={{textAlign:'left',display:'flex',flexFlow:'row'}} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)}>{props.shelfName}  
-      {edit ? 
-        <form className="form-box" style={{marginLeft:'1vw'}} onSubmit={() => renameShelf(props.shelfName,newName,token.username)}> 
-          <input type="text" value={newName} placeholder="Rename bookshelf" onChange={e => setName(e.target.value)}/>
-          <MdEdit style={{marginLeft:'1vw'}} onClick={() => renameShelf(props.shelfName,newName,token.username)}/> 
-        </form> 
-        : <></>
-      }</h3>
+        <h3 style={{textAlign:'left',display:'flex',flexFlow:'row'}} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)}>{props.shelfName}  
+        {edit ? 
+          <form className="form-box" style={{marginLeft:'1vw'}} onSubmit={() => renameShelf(props.shelfName,newName,token.username)}> 
+            <input type="text" value={newName} placeholder="Rename bookshelf" onChange={e => setName(e.target.value)}/>
+            <MdEdit style={{marginLeft:'1vw'}} onClick={() => renameShelf(props.shelfName,newName,token.username)}/> 
+          </form> 
+          : <></>
+        }</h3>
         <div className="scrolling-wrapper-flexbox">
           {
           props.booklist.map(book => 
