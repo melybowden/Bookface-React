@@ -3,6 +3,7 @@ import Header from './header';
 import firebase from 'firebase/app';
 import "firebase/database";
 import GoalItems from "./GoalItems";
+import { Redirect } from 'react-router';
 
 export default class Goals extends Component {
     
@@ -17,7 +18,9 @@ export default class Goals extends Component {
     }
 
     componentDidMount() {
-        firebase.database().ref('goals/'+this.props.match.params.user)
+      const tokenString = sessionStorage.getItem('token');
+      const userToken = JSON.parse(tokenString).username;
+        firebase.database().ref('goals/'+userToken)
         .on('value', (promise) => {
           if (promise.exists()) {
             var res = promise.val()
@@ -31,6 +34,9 @@ export default class Goals extends Component {
     }
 
     addGoal(e) {
+      const tokenString = sessionStorage.getItem('token');
+      const userToken = JSON.parse(tokenString).username;
+        
       e.preventDefault();
 
         if (this._inputElement.value !== "") {
@@ -48,13 +54,18 @@ export default class Goals extends Component {
           this._inputElement.value = "";
         }
 
-        firebase.database().ref('goals/' + this.props.match.params.user + '/' + newGoal.key).set({
+        firebase.database().ref('goals/' + userToken + '/' + newGoal.key).set({
             goal: newGoal.text,
             status: 'new'
           });
       }
 
     render() {
+      const tokenString = sessionStorage.getItem('token');
+        const userToken = JSON.parse(tokenString);
+        if (userToken === null) {
+          return <Redirect to="/" />
+        }
         return (
             <div style={{overflow:'hidden'}}>
               <Header user={this.props.match.params.user}/>

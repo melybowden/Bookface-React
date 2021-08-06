@@ -3,6 +3,7 @@ import Header from './header';
 import Shelfify from './shelfify';
 import firebase from 'firebase/app';
 import "firebase/database";
+import { Redirect } from 'react-router';
 
 export default class Library extends Component {
     constructor(props){
@@ -27,7 +28,9 @@ export default class Library extends Component {
   }
 
   componentWillUnmount() {
-    firebase.database().ref('shelves/'+this.props.match.params.user)
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString).username;
+    firebase.database().ref('shelves/'+userToken)
     .on('value', (snapshot) => {
       if (snapshot.exists()) {
         this.setState({booklist: snapshot.val()}); //{shelf1:{book1:{},...}, ...}
@@ -39,6 +42,11 @@ export default class Library extends Component {
   }
 
     render() {
+      const tokenString = sessionStorage.getItem('token');
+      const userToken = JSON.parse(tokenString);
+      if (userToken === null) {
+        return <Redirect to="/" />
+      }
         return (
             <div style={{overflow:'hidden'}}>
               <Header user={this.props.match.params.user}/>

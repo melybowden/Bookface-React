@@ -5,6 +5,7 @@ import book_not_found from './book_not_found.jpg';
 import Header from './header';
 import firebase from "firebase/app";
 import "firebase/database";
+import { Redirect } from 'react-router-dom';
 
 export default class Search extends Component {
     constructor(props) {
@@ -23,7 +24,9 @@ export default class Search extends Component {
       }
 
       componentDidMount() {
-        firebase.database().ref('shelves/'+this.props.match.params.user)
+        const tokenString = sessionStorage.getItem('token');
+        const userToken = JSON.parse(tokenString).username;
+        firebase.database().ref('shelves/'+userToken)
         .on('value', (snapshot) => {
           if (snapshot.exists()) {
             console.log(Object.keys(snapshot.val()));
@@ -56,6 +59,13 @@ export default class Search extends Component {
       }
     
       render() {
+        const tokenString = sessionStorage.getItem('token');
+        const userToken = JSON.parse(tokenString);
+        if (userToken === null) {
+          return <Redirect to="/" />
+          // var history = useHistory();
+          // history.push('/');
+        }
         return (
           <div style={{overflow:'hidden'}}>
             <Header user={this.props.match.params.user}/>
@@ -75,7 +85,7 @@ export default class Search extends Component {
               isbn={book.volumeInfo.industryIdentifiers !== undefined ? this.getIdentifier(book.volumeInfo.industryIdentifiers) : "Unknown"}
               imgURL={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : book_not_found}
               shelf={this.state.shelves}
-              user={this.props.match.params.user}/>)}
+              user={JSON.parse(sessionStorage.getItem('token')).username}/>)}
             </div>
             {
               this.state.searchRes.length > 0 && this.state.nRes < 40 ? 
